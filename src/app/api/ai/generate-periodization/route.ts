@@ -22,10 +22,17 @@ const BodySchema = z.object({
 export async function POST(req: Request) {
   try {
     const body = BodySchema.parse(await req.json());
+    const exercises = demoExercises.filter((e) => {
+      if (body.equipment.includes("academia_completa")) return true;
+      return (
+        body.equipment.includes(e.equipment) || e.equipment === "peso_corporal"
+      );
+    });
+
     const result = await generatePeriodizationWithAI({
       profile: demoProfile as unknown as Record<string, unknown>,
       history: demoHistory,
-      exercises: demoExercises,
+      exercises,
       calendar: demoCalendar,
       form: {
         goal: body.goal,

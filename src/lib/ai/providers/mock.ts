@@ -136,18 +136,22 @@ function delayResult(content: string, started: number): AICompletionResult {
 }
 
 function extractAllowedIds(user: string) {
-  const matches = user.match(
+  // Prefer IDs listed under AVAILABLE EXERCISES block when present
+  const availableIdx = user.indexOf("AVAILABLE EXERCISES:");
+  const slice =
+    availableIdx >= 0 ? user.slice(availableIdx, availableIdx + 12000) : user;
+  const matches = slice.match(
     /[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/gi,
   );
   const unique = [...new Set(matches ?? [])];
   if (unique.length > 0) return unique;
   return [
     "10000000-0000-4000-8000-000000000001",
-    "10000000-0000-4000-8000-000000000009",
+    "10000000-0000-4000-8000-000000000006",
     "10000000-0000-4000-8000-000000000033",
     "10000000-0000-4000-8000-000000000023",
-    "10000000-0000-4000-8000-000000000028",
     "10000000-0000-4000-8000-000000000053",
+    "10000000-0000-4000-8000-000000000009",
   ];
 }
 
