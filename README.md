@@ -69,6 +69,16 @@ Fluxos principais:
 4. Multi-tenant, trainer, assinaturas, Cloudflare (base ✅)
 5. PWA/manifest, R2, notificações (base ✅)
 
-## Produção
+## Deploy (Cloudflare + Supabase)
 
-Veja `docs/ARCHITECTURE.md` e `docs/CLOUDFLARE.md`.
+```bash
+# 1) Configure .env.local com Supabase
+# 2) Aplique migrations no projeto Supabase
+# 3) Publique no Cloudflare Workers:
+export CLOUDFLARE_API_TOKEN=...
+export CLOUDFLARE_ACCOUNT_ID=...
+npm run deploy
+```
+
+Guia passo a passo: [`docs/DEPLOY.md`](docs/DEPLOY.md)  
+Arquitetura: [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) · Cloudflare: [`docs/CLOUDFLARE.md`](docs/CLOUDFLARE.md)
