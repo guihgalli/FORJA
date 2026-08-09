@@ -1,0 +1,6 @@
+name = "forja-api-proxy"
+main = "src/index.ts"
+compatibility_date = "2026-03-01"
+
+[vars]
+UPSTREAM_ORIGIN = "https://app.seudominio.com"

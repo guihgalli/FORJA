@@ -1,0 +1,2575 @@
+[
+  {
+    "id": "10000000-0000-4000-8000-000000000001",
+    "name": "Supino Reto com Barra",
+    "slug": "supino-reto-com-barra",
+    "description": "Press horizontal clássico para peitoral.",
+    "instructions": "Deite no banco, pés firmes, desça a barra até o peito e empurre até a extensão.",
+    "primary_muscle": "peito",
+    "secondary_muscles": [
+      "triceps",
+      "ombros"
+    ],
+    "equipment": "barra",
+    "difficulty": "intermediario",
+    "movement_pattern": "empurrar",
+    "exercise_type": "hipertrofia",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "peito",
+      "composto"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000002",
+    "name": "Supino Inclinado com Halteres",
+    "slug": "supino-inclinado-com-halteres",
+    "description": "Ênfase na porção clavicular do peitoral.",
+    "instructions": "Banco 30-45°, empurre os halteres em linha diagonal.",
+    "primary_muscle": "peito",
+    "secondary_muscles": [
+      "ombros",
+      "triceps"
+    ],
+    "equipment": "halteres",
+    "difficulty": "intermediario",
+    "movement_pattern": "empurrar",
+    "exercise_type": "hipertrofia",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "peito",
+      "inclinado"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000003",
+    "name": "Supino Declinado",
+    "slug": "supino-declinado",
+    "description": "Ênfase na porção inferior do peito.",
+    "instructions": "Controle a descida e evite arquear demais a lombar.",
+    "primary_muscle": "peito",
+    "secondary_muscles": [
+      "triceps"
+    ],
+    "equipment": "barra",
+    "difficulty": "intermediario",
+    "movement_pattern": "empurrar",
+    "exercise_type": "hipertrofia",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "peito"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000004",
+    "name": "Crucifixo com Halteres",
+    "slug": "crucifixo-com-halteres",
+    "description": "Isolamento do peitoral com abertura.",
+    "instructions": "Cotovelos levemente flexionados, arco amplo.",
+    "primary_muscle": "peito",
+    "secondary_muscles": [
+      "ombros"
+    ],
+    "equipment": "halteres",
+    "difficulty": "iniciante",
+    "movement_pattern": "empurrar",
+    "exercise_type": "hipertrofia",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "peito",
+      "isolamento"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000005",
+    "name": "Crossover no Cabo",
+    "slug": "crossover-no-cabo",
+    "description": "Isolamento com tensão constante.",
+    "instructions": "Traga as mãos à frente do tronco mantendo tensão.",
+    "primary_muscle": "peito",
+    "secondary_muscles": [],
+    "equipment": "maquinas",
+    "difficulty": "iniciante",
+    "movement_pattern": "empurrar",
+    "exercise_type": "hipertrofia",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "peito",
+      "cabo"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000006",
+    "name": "Flexão de Braço",
+    "slug": "flexao-de-braco",
+    "description": "Push-up clássico.",
+    "instructions": "Corpo alinhado, desça até peito próximo ao solo.",
+    "primary_muscle": "peito",
+    "secondary_muscles": [
+      "triceps",
+      "ombros",
+      "core"
+    ],
+    "equipment": "peso_corporal",
+    "difficulty": "iniciante",
+    "movement_pattern": "empurrar",
+    "exercise_type": "forca",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "peito",
+      "peso corporal"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000007",
+    "name": "Flexão Diamante",
+    "slug": "flexao-diamante",
+    "description": "Variação com ênfase em tríceps.",
+    "instructions": "Mãos próximas formando diamante.",
+    "primary_muscle": "peito",
+    "secondary_muscles": [
+      "triceps"
+    ],
+    "equipment": "peso_corporal",
+    "difficulty": "intermediario",
+    "movement_pattern": "empurrar",
+    "exercise_type": "forca",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "peito",
+      "triceps"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000008",
+    "name": "Peck Deck",
+    "slug": "peck-deck",
+    "description": "Máquina de adução peitoral.",
+    "instructions": "Cotovelos ligeiramente flexionados, aproxime os braços.",
+    "primary_muscle": "peito",
+    "secondary_muscles": [],
+    "equipment": "maquinas",
+    "difficulty": "iniciante",
+    "movement_pattern": "empurrar",
+    "exercise_type": "hipertrofia",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "peito",
+      "maquina"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000009",
+    "name": "Supino Reto com Halteres",
+    "slug": "supino-reto-com-halteres",
+    "description": "Press com maior amplitude.",
+    "instructions": "Desça com controle até alongamento confortável.",
+    "primary_muscle": "peito",
+    "secondary_muscles": [
+      "triceps"
+    ],
+    "equipment": "halteres",
+    "difficulty": "iniciante",
+    "movement_pattern": "empurrar",
+    "exercise_type": "hipertrofia",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "peito"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000010",
+    "name": "Crucifixo Inclinado",
+    "slug": "crucifixo-inclinado",
+    "description": "Abertura no banco inclinado.",
+    "instructions": "Arco amplo sem descer demais os ombros.",
+    "primary_muscle": "peito",
+    "secondary_muscles": [],
+    "equipment": "halteres",
+    "difficulty": "iniciante",
+    "movement_pattern": "empurrar",
+    "exercise_type": "hipertrofia",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "peito"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000011",
+    "name": "Barra Fixa Pronada",
+    "slug": "barra-fixa-pronada",
+    "description": "Puxada vertical no peso corporal.",
+    "instructions": "Puxe até o queixo passar a barra, controle a descida.",
+    "primary_muscle": "costas",
+    "secondary_muscles": [
+      "biceps"
+    ],
+    "equipment": "peso_corporal",
+    "difficulty": "intermediario",
+    "movement_pattern": "puxar",
+    "exercise_type": "forca",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "costas",
+      "composto"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000012",
+    "name": "Puxada Frontal",
+    "slug": "puxada-frontal",
+    "description": "Lat pulldown.",
+    "instructions": "Puxe a barra até a clavícula sem balançar o tronco.",
+    "primary_muscle": "costas",
+    "secondary_muscles": [
+      "biceps"
+    ],
+    "equipment": "maquinas",
+    "difficulty": "iniciante",
+    "movement_pattern": "puxar",
+    "exercise_type": "hipertrofia",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "costas"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000013",
+    "name": "Remada Curvada com Barra",
+    "slug": "remada-curvada-com-barra",
+    "description": "Remada horizontal composta.",
+    "instructions": "Quadril hinged, puxe a barra até o abdômen.",
+    "primary_muscle": "costas",
+    "secondary_muscles": [
+      "biceps",
+      "posteriores"
+    ],
+    "equipment": "barra",
+    "difficulty": "intermediario",
+    "movement_pattern": "puxar",
+    "exercise_type": "hipertrofia",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "costas",
+      "composto"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000014",
+    "name": "Remada Unilateral com Halter",
+    "slug": "remada-unilateral-com-halter",
+    "description": "Remada serrote.",
+    "instructions": "Apoie um joelho no banco, puxe o halter à lateral do tronco.",
+    "primary_muscle": "costas",
+    "secondary_muscles": [
+      "biceps"
+    ],
+    "equipment": "halteres",
+    "difficulty": "iniciante",
+    "movement_pattern": "puxar",
+    "exercise_type": "hipertrofia",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "costas"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000015",
+    "name": "Remada Cavalinho",
+    "slug": "remada-cavalinho",
+    "description": "Remada sentada.",
+    "instructions": "Peito apoiado, puxe cotovelos para trás.",
+    "primary_muscle": "costas",
+    "secondary_muscles": [
+      "biceps"
+    ],
+    "equipment": "maquinas",
+    "difficulty": "iniciante",
+    "movement_pattern": "puxar",
+    "exercise_type": "hipertrofia",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "costas"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000016",
+    "name": "Levantamento Terra",
+    "slug": "levantamento-terra",
+    "description": "Movimento fundamental de hinge.",
+    "instructions": "Barra próxima às canelas, empurre o chão e estenda quadril.",
+    "primary_muscle": "costas",
+    "secondary_muscles": [
+      "gluteos",
+      "posteriores",
+      "quadriceps"
+    ],
+    "equipment": "barra",
+    "difficulty": "avancado",
+    "movement_pattern": "hinge",
+    "exercise_type": "forca",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "posterior",
+      "composto",
+      "pr"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000017",
+    "name": "Pullover com Halter",
+    "slug": "pullover-com-halter",
+    "description": "Alongamento do latíssimo.",
+    "instructions": "Braços semi-estendidos, arco controlado.",
+    "primary_muscle": "costas",
+    "secondary_muscles": [
+      "peito"
+    ],
+    "equipment": "halteres",
+    "difficulty": "iniciante",
+    "movement_pattern": "puxar",
+    "exercise_type": "hipertrofia",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "costas"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000018",
+    "name": "Face Pull",
+    "slug": "face-pull",
+    "description": "Saúde de ombro.",
+    "instructions": "Puxe em direção ao rosto abrindo as mãos.",
+    "primary_muscle": "costas",
+    "secondary_muscles": [
+      "ombros"
+    ],
+    "equipment": "elasticos",
+    "difficulty": "iniciante",
+    "movement_pattern": "puxar",
+    "exercise_type": "mobilidade",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "ombros",
+      "prehab"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000019",
+    "name": "Remada Pendlay",
+    "slug": "remada-pendlay",
+    "description": "Remada explosiva do chão.",
+    "instructions": "Cada rep parte do chão com tronco paralelo.",
+    "primary_muscle": "costas",
+    "secondary_muscles": [
+      "biceps"
+    ],
+    "equipment": "barra",
+    "difficulty": "avancado",
+    "movement_pattern": "puxar",
+    "exercise_type": "forca",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "costas"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000020",
+    "name": "Seal Row",
+    "slug": "seal-row",
+    "description": "Remada deitada no banco.",
+    "instructions": "Peito apoiado, puxe sem impulso.",
+    "primary_muscle": "costas",
+    "secondary_muscles": [
+      "biceps"
+    ],
+    "equipment": "halteres",
+    "difficulty": "intermediario",
+    "movement_pattern": "puxar",
+    "exercise_type": "hipertrofia",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "costas"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000021",
+    "name": "Desenvolvimento Militar",
+    "slug": "desenvolvimento-militar",
+    "description": "Press vertical em pé.",
+    "instructions": "Core firme, barra sobe próxima ao rosto.",
+    "primary_muscle": "ombros",
+    "secondary_muscles": [
+      "triceps"
+    ],
+    "equipment": "barra",
+    "difficulty": "intermediario",
+    "movement_pattern": "empurrar",
+    "exercise_type": "forca",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "ombros",
+      "composto"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000022",
+    "name": "Desenvolvimento com Halteres",
+    "slug": "desenvolvimento-com-halteres",
+    "description": "Press com halteres.",
+    "instructions": "Empurre sem arquear excessivamente a lombar.",
+    "primary_muscle": "ombros",
+    "secondary_muscles": [
+      "triceps"
+    ],
+    "equipment": "halteres",
+    "difficulty": "iniciante",
+    "movement_pattern": "empurrar",
+    "exercise_type": "hipertrofia",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "ombros"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000023",
+    "name": "Elevação Lateral",
+    "slug": "elevacao-lateral",
+    "description": "Isolamento do deltoide medial.",
+    "instructions": "Elevação até a linha dos ombros.",
+    "primary_muscle": "ombros",
+    "secondary_muscles": [],
+    "equipment": "halteres",
+    "difficulty": "iniciante",
+    "movement_pattern": "empurrar",
+    "exercise_type": "hipertrofia",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "ombros",
+      "isolamento"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000024",
+    "name": "Elevação Frontal",
+    "slug": "elevacao-frontal",
+    "description": "Deltoide anterior.",
+    "instructions": "Eleve até a linha dos olhos.",
+    "primary_muscle": "ombros",
+    "secondary_muscles": [],
+    "equipment": "halteres",
+    "difficulty": "iniciante",
+    "movement_pattern": "empurrar",
+    "exercise_type": "hipertrofia",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "ombros"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000025",
+    "name": "Elevação Posterior no Banco",
+    "slug": "elevacao-posterior-no-banco",
+    "description": "Deltoide posterior.",
+    "instructions": "Tronco inclinado, abra os braços.",
+    "primary_muscle": "ombros",
+    "secondary_muscles": [
+      "costas"
+    ],
+    "equipment": "halteres",
+    "difficulty": "iniciante",
+    "movement_pattern": "puxar",
+    "exercise_type": "hipertrofia",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "ombros"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000026",
+    "name": "Arnold Press",
+    "slug": "arnold-press",
+    "description": "Press com rotação.",
+    "instructions": "Rotacione ao pressionar.",
+    "primary_muscle": "ombros",
+    "secondary_muscles": [
+      "triceps"
+    ],
+    "equipment": "halteres",
+    "difficulty": "intermediario",
+    "movement_pattern": "empurrar",
+    "exercise_type": "hipertrofia",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "ombros"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000027",
+    "name": "Encolhimento de Ombros",
+    "slug": "encolhimento-de-ombros",
+    "description": "Shrugs.",
+    "instructions": "Eleve os ombros sem rolar.",
+    "primary_muscle": "ombros",
+    "secondary_muscles": [
+      "costas"
+    ],
+    "equipment": "halteres",
+    "difficulty": "iniciante",
+    "movement_pattern": "carregamento",
+    "exercise_type": "hipertrofia",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "ombros",
+      "trapezio"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000028",
+    "name": "Elevação Lateral no Cabo",
+    "slug": "elevacao-lateral-no-cabo",
+    "description": "Lateral raise no cabo.",
+    "instructions": "Puxe pelo cotovelo.",
+    "primary_muscle": "ombros",
+    "secondary_muscles": [],
+    "equipment": "maquinas",
+    "difficulty": "iniciante",
+    "movement_pattern": "empurrar",
+    "exercise_type": "hipertrofia",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "ombros"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000029",
+    "name": "Rosca Direta com Barra",
+    "slug": "rosca-direta-com-barra",
+    "description": "Curl clássico.",
+    "instructions": "Cotovelos fixos, evite balanço.",
+    "primary_muscle": "biceps",
+    "secondary_muscles": [],
+    "equipment": "barra",
+    "difficulty": "iniciante",
+    "movement_pattern": "puxar",
+    "exercise_type": "hipertrofia",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "biceps"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000030",
+    "name": "Rosca Alternada",
+    "slug": "rosca-alternada",
+    "description": "Curl alternado.",
+    "instructions": "Supine o punho no topo.",
+    "primary_muscle": "biceps",
+    "secondary_muscles": [],
+    "equipment": "halteres",
+    "difficulty": "iniciante",
+    "movement_pattern": "puxar",
+    "exercise_type": "hipertrofia",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "biceps"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000031",
+    "name": "Rosca Martelo",
+    "slug": "rosca-martelo",
+    "description": "Ênfase no braquial.",
+    "instructions": "Punhos neutros.",
+    "primary_muscle": "biceps",
+    "secondary_muscles": [],
+    "equipment": "halteres",
+    "difficulty": "iniciante",
+    "movement_pattern": "puxar",
+    "exercise_type": "hipertrofia",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "biceps"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000032",
+    "name": "Rosca Scott",
+    "slug": "rosca-scott",
+    "description": "Curl no banco scott.",
+    "instructions": "Braços apoiados, amplitude completa.",
+    "primary_muscle": "biceps",
+    "secondary_muscles": [],
+    "equipment": "maquinas",
+    "difficulty": "iniciante",
+    "movement_pattern": "puxar",
+    "exercise_type": "hipertrofia",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "biceps"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000033",
+    "name": "Rosca no Cabo",
+    "slug": "rosca-no-cabo",
+    "description": "Tensão constante.",
+    "instructions": "Cotovelos colados ao tronco.",
+    "primary_muscle": "biceps",
+    "secondary_muscles": [],
+    "equipment": "maquinas",
+    "difficulty": "iniciante",
+    "movement_pattern": "puxar",
+    "exercise_type": "hipertrofia",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "biceps"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000034",
+    "name": "Rosca Inclinada",
+    "slug": "rosca-inclinada",
+    "description": "Curl no banco inclinado.",
+    "instructions": "Alongamento longo.",
+    "primary_muscle": "biceps",
+    "secondary_muscles": [],
+    "equipment": "halteres",
+    "difficulty": "intermediario",
+    "movement_pattern": "puxar",
+    "exercise_type": "hipertrofia",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "biceps"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000035",
+    "name": "Rosca Concentrada",
+    "slug": "rosca-concentrada",
+    "description": "Curl isolado.",
+    "instructions": "Cotovelo apoiado na coxa.",
+    "primary_muscle": "biceps",
+    "secondary_muscles": [],
+    "equipment": "halteres",
+    "difficulty": "iniciante",
+    "movement_pattern": "puxar",
+    "exercise_type": "hipertrofia",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "biceps"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000036",
+    "name": "Tríceps Testa",
+    "slug": "triceps-testa",
+    "description": "Skull crusher.",
+    "instructions": "Desça à testa e estenda.",
+    "primary_muscle": "triceps",
+    "secondary_muscles": [],
+    "equipment": "barra",
+    "difficulty": "iniciante",
+    "movement_pattern": "empurrar",
+    "exercise_type": "hipertrofia",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "triceps"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000037",
+    "name": "Tríceps Pulley",
+    "slug": "triceps-pulley",
+    "description": "Extensão no cabo.",
+    "instructions": "Cotovelos fixos.",
+    "primary_muscle": "triceps",
+    "secondary_muscles": [],
+    "equipment": "maquinas",
+    "difficulty": "iniciante",
+    "movement_pattern": "empurrar",
+    "exercise_type": "hipertrofia",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "triceps"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000038",
+    "name": "Tríceps Francês",
+    "slug": "triceps-frances",
+    "description": "Extensão acima da cabeça.",
+    "instructions": "Cotovelos apontando para cima.",
+    "primary_muscle": "triceps",
+    "secondary_muscles": [],
+    "equipment": "halteres",
+    "difficulty": "iniciante",
+    "movement_pattern": "empurrar",
+    "exercise_type": "hipertrofia",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "triceps"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000039",
+    "name": "Mergulho em Paralelas",
+    "slug": "mergulho-em-paralelas",
+    "description": "Dips.",
+    "instructions": "Incline conforme o foco.",
+    "primary_muscle": "triceps",
+    "secondary_muscles": [
+      "peito",
+      "ombros"
+    ],
+    "equipment": "peso_corporal",
+    "difficulty": "intermediario",
+    "movement_pattern": "empurrar",
+    "exercise_type": "forca",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "triceps",
+      "composto"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000040",
+    "name": "Kickback com Halter",
+    "slug": "kickback-com-halter",
+    "description": "Isolamento em hinge.",
+    "instructions": "Estenda o cotovelo.",
+    "primary_muscle": "triceps",
+    "secondary_muscles": [],
+    "equipment": "halteres",
+    "difficulty": "iniciante",
+    "movement_pattern": "empurrar",
+    "exercise_type": "hipertrofia",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "triceps"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000041",
+    "name": "Tríceps Banco",
+    "slug": "triceps-banco",
+    "description": "Bench dip.",
+    "instructions": "Desça até cerca de 90°.",
+    "primary_muscle": "triceps",
+    "secondary_muscles": [],
+    "equipment": "peso_corporal",
+    "difficulty": "iniciante",
+    "movement_pattern": "empurrar",
+    "exercise_type": "hipertrofia",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "triceps"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000042",
+    "name": "Overhead Cable Extension",
+    "slug": "overhead-cable-extension",
+    "description": "Extensão overhead.",
+    "instructions": "Cotovelos estáveis.",
+    "primary_muscle": "triceps",
+    "secondary_muscles": [],
+    "equipment": "maquinas",
+    "difficulty": "iniciante",
+    "movement_pattern": "empurrar",
+    "exercise_type": "hipertrofia",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "triceps"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000043",
+    "name": "Agachamento Livre",
+    "slug": "agachamento-livre",
+    "description": "Back squat.",
+    "instructions": "Pés na largura dos ombros, desça com controle.",
+    "primary_muscle": "quadriceps",
+    "secondary_muscles": [
+      "gluteos",
+      "posteriores",
+      "core"
+    ],
+    "equipment": "barra",
+    "difficulty": "intermediario",
+    "movement_pattern": "agachar",
+    "exercise_type": "forca",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "pernas",
+      "composto",
+      "pr"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000044",
+    "name": "Agachamento Frontal",
+    "slug": "agachamento-frontal",
+    "description": "Front squat.",
+    "instructions": "Cotovelos altos.",
+    "primary_muscle": "quadriceps",
+    "secondary_muscles": [
+      "core",
+      "gluteos"
+    ],
+    "equipment": "barra",
+    "difficulty": "avancado",
+    "movement_pattern": "agachar",
+    "exercise_type": "forca",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "pernas"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000045",
+    "name": "Leg Press",
+    "slug": "leg-press",
+    "description": "Press de pernas.",
+    "instructions": "Amplitude segura.",
+    "primary_muscle": "quadriceps",
+    "secondary_muscles": [
+      "gluteos"
+    ],
+    "equipment": "maquinas",
+    "difficulty": "iniciante",
+    "movement_pattern": "agachar",
+    "exercise_type": "hipertrofia",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "pernas"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000046",
+    "name": "Afundo Caminhando",
+    "slug": "afundo-caminhando",
+    "description": "Lunge dinâmico.",
+    "instructions": "Passo longo.",
+    "primary_muscle": "quadriceps",
+    "secondary_muscles": [
+      "gluteos"
+    ],
+    "equipment": "halteres",
+    "difficulty": "intermediario",
+    "movement_pattern": "agachar",
+    "exercise_type": "hipertrofia",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "pernas",
+      "unilateral"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000047",
+    "name": "Hack Squat",
+    "slug": "hack-squat",
+    "description": "Agachamento na hack.",
+    "instructions": "Desça controlado.",
+    "primary_muscle": "quadriceps",
+    "secondary_muscles": [
+      "gluteos"
+    ],
+    "equipment": "maquinas",
+    "difficulty": "intermediario",
+    "movement_pattern": "agachar",
+    "exercise_type": "hipertrofia",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "pernas"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000048",
+    "name": "Cadeira Extensora",
+    "slug": "cadeira-extensora",
+    "description": "Isolamento de quadríceps.",
+    "instructions": "Estenda sem estalos.",
+    "primary_muscle": "quadriceps",
+    "secondary_muscles": [],
+    "equipment": "maquinas",
+    "difficulty": "iniciante",
+    "movement_pattern": "agachar",
+    "exercise_type": "hipertrofia",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "pernas",
+      "isolamento"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000049",
+    "name": "Agachamento Búlgaro",
+    "slug": "agachamento-bulgaro",
+    "description": "Split squat elevado.",
+    "instructions": "Tronco ereto.",
+    "primary_muscle": "quadriceps",
+    "secondary_muscles": [
+      "gluteos"
+    ],
+    "equipment": "halteres",
+    "difficulty": "intermediario",
+    "movement_pattern": "agachar",
+    "exercise_type": "forca",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "pernas",
+      "unilateral"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000050",
+    "name": "Step-up",
+    "slug": "step-up",
+    "description": "Subida no banco.",
+    "instructions": "Empurre pelo pé da frente.",
+    "primary_muscle": "quadriceps",
+    "secondary_muscles": [
+      "gluteos"
+    ],
+    "equipment": "halteres",
+    "difficulty": "iniciante",
+    "movement_pattern": "agachar",
+    "exercise_type": "forca",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "pernas"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000051",
+    "name": "Agachamento Goblet",
+    "slug": "agachamento-goblet",
+    "description": "Goblet squat.",
+    "instructions": "Cotovelos entre os joelhos.",
+    "primary_muscle": "quadriceps",
+    "secondary_muscles": [
+      "gluteos",
+      "core"
+    ],
+    "equipment": "halteres",
+    "difficulty": "iniciante",
+    "movement_pattern": "agachar",
+    "exercise_type": "forca",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "pernas"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000052",
+    "name": "Leg Press Unilateral",
+    "slug": "leg-press-unilateral",
+    "description": "Press unilateral.",
+    "instructions": "Controle o joelho.",
+    "primary_muscle": "quadriceps",
+    "secondary_muscles": [
+      "gluteos"
+    ],
+    "equipment": "maquinas",
+    "difficulty": "intermediario",
+    "movement_pattern": "agachar",
+    "exercise_type": "hipertrofia",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "pernas",
+      "unilateral"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000053",
+    "name": "Stiff com Barra",
+    "slug": "stiff-com-barra",
+    "description": "Romanian deadlift.",
+    "instructions": "Joelhos soft, barra junto às coxas.",
+    "primary_muscle": "posteriores",
+    "secondary_muscles": [
+      "gluteos",
+      "costas"
+    ],
+    "equipment": "barra",
+    "difficulty": "intermediario",
+    "movement_pattern": "hinge",
+    "exercise_type": "hipertrofia",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "posteriores"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000054",
+    "name": "Mesa Flexora",
+    "slug": "mesa-flexora",
+    "description": "Leg curl deitado.",
+    "instructions": "Sem elevar o quadril.",
+    "primary_muscle": "posteriores",
+    "secondary_muscles": [],
+    "equipment": "maquinas",
+    "difficulty": "iniciante",
+    "movement_pattern": "hinge",
+    "exercise_type": "hipertrofia",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "posteriores"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000055",
+    "name": "Cadeira Flexora",
+    "slug": "cadeira-flexora",
+    "description": "Leg curl sentado.",
+    "instructions": "Controle a fase excêntrica.",
+    "primary_muscle": "posteriores",
+    "secondary_muscles": [],
+    "equipment": "maquinas",
+    "difficulty": "iniciante",
+    "movement_pattern": "hinge",
+    "exercise_type": "hipertrofia",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "posteriores"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000056",
+    "name": "Good Morning",
+    "slug": "good-morning",
+    "description": "Hinge com barra.",
+    "instructions": "Coluna neutra.",
+    "primary_muscle": "posteriores",
+    "secondary_muscles": [
+      "gluteos",
+      "costas"
+    ],
+    "equipment": "barra",
+    "difficulty": "avancado",
+    "movement_pattern": "hinge",
+    "exercise_type": "forca",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "posteriores"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000057",
+    "name": "Nordic Curl Assistido",
+    "slug": "nordic-curl-assistido",
+    "description": "Curl nórdico.",
+    "instructions": "Controle a fase excêntrica.",
+    "primary_muscle": "posteriores",
+    "secondary_muscles": [],
+    "equipment": "peso_corporal",
+    "difficulty": "avancado",
+    "movement_pattern": "hinge",
+    "exercise_type": "forca",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "posteriores",
+      "prehab"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000058",
+    "name": "Stiff com Halteres",
+    "slug": "stiff-com-halteres",
+    "description": "RDL com halteres.",
+    "instructions": "Empurre o quadril para trás.",
+    "primary_muscle": "posteriores",
+    "secondary_muscles": [
+      "gluteos"
+    ],
+    "equipment": "halteres",
+    "difficulty": "iniciante",
+    "movement_pattern": "hinge",
+    "exercise_type": "hipertrofia",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "posteriores"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000059",
+    "name": "Slide Leg Curl",
+    "slug": "slide-leg-curl",
+    "description": "Curl com slide.",
+    "instructions": "Quadril elevado.",
+    "primary_muscle": "posteriores",
+    "secondary_muscles": [
+      "gluteos"
+    ],
+    "equipment": "peso_corporal",
+    "difficulty": "intermediario",
+    "movement_pattern": "hinge",
+    "exercise_type": "forca",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "posteriores"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000060",
+    "name": "Hip Thrust",
+    "slug": "hip-thrust",
+    "description": "Extensão de quadril.",
+    "instructions": "Queixo baixo, empurre com calcanhares.",
+    "primary_muscle": "gluteos",
+    "secondary_muscles": [
+      "posteriores"
+    ],
+    "equipment": "barra",
+    "difficulty": "intermediario",
+    "movement_pattern": "hinge",
+    "exercise_type": "hipertrofia",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "gluteos"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000061",
+    "name": "Glúteo na Polia",
+    "slug": "gluteo-na-polia",
+    "description": "Kickback no cabo.",
+    "instructions": "Sem arquear a lombar.",
+    "primary_muscle": "gluteos",
+    "secondary_muscles": [],
+    "equipment": "maquinas",
+    "difficulty": "iniciante",
+    "movement_pattern": "hinge",
+    "exercise_type": "hipertrofia",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "gluteos"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000062",
+    "name": "Elevação Pélvica Unilateral",
+    "slug": "elevacao-pelvica-unilateral",
+    "description": "Bridge unilateral.",
+    "instructions": "Empurre o quadril para cima.",
+    "primary_muscle": "gluteos",
+    "secondary_muscles": [
+      "posteriores"
+    ],
+    "equipment": "peso_corporal",
+    "difficulty": "iniciante",
+    "movement_pattern": "hinge",
+    "exercise_type": "forca",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "gluteos"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000063",
+    "name": "Abdução de Quadril",
+    "slug": "abducao-de-quadril",
+    "description": "Máquina abdutora.",
+    "instructions": "Abra com controle.",
+    "primary_muscle": "gluteos",
+    "secondary_muscles": [],
+    "equipment": "maquinas",
+    "difficulty": "iniciante",
+    "movement_pattern": "rotacao",
+    "exercise_type": "hipertrofia",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "gluteos"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000064",
+    "name": "Hip Thrust Unilateral",
+    "slug": "hip-thrust-unilateral",
+    "description": "Thrust uma perna.",
+    "instructions": "Empurre pelo calcanhar.",
+    "primary_muscle": "gluteos",
+    "secondary_muscles": [
+      "posteriores"
+    ],
+    "equipment": "halteres",
+    "difficulty": "intermediario",
+    "movement_pattern": "hinge",
+    "exercise_type": "hipertrofia",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "gluteos",
+      "unilateral"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000065",
+    "name": "Clamshell com Elástico",
+    "slug": "clamshell-com-elastico",
+    "description": "Ativação de glúteo médio.",
+    "instructions": "Pés juntos, abra o joelho.",
+    "primary_muscle": "gluteos",
+    "secondary_muscles": [],
+    "equipment": "elasticos",
+    "difficulty": "iniciante",
+    "movement_pattern": "rotacao",
+    "exercise_type": "mobilidade",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "gluteos",
+      "prehab"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000066",
+    "name": "Panturrilha em Pé",
+    "slug": "panturrilha-em-pe",
+    "description": "Gastrocnêmio.",
+    "instructions": "Amplitude completa.",
+    "primary_muscle": "panturrilhas",
+    "secondary_muscles": [],
+    "equipment": "maquinas",
+    "difficulty": "iniciante",
+    "movement_pattern": "carregamento",
+    "exercise_type": "hipertrofia",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "panturrilhas"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000067",
+    "name": "Panturrilha Sentada",
+    "slug": "panturrilha-sentada",
+    "description": "Sóleo.",
+    "instructions": "Subida completa.",
+    "primary_muscle": "panturrilhas",
+    "secondary_muscles": [],
+    "equipment": "maquinas",
+    "difficulty": "iniciante",
+    "movement_pattern": "carregamento",
+    "exercise_type": "hipertrofia",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "panturrilhas"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000068",
+    "name": "Panturrilha Unilateral no Degrau",
+    "slug": "panturrilha-unilateral-no-degrau",
+    "description": "Single-leg calf raise.",
+    "instructions": "Use o degrau para alongar.",
+    "primary_muscle": "panturrilhas",
+    "secondary_muscles": [],
+    "equipment": "peso_corporal",
+    "difficulty": "iniciante",
+    "movement_pattern": "carregamento",
+    "exercise_type": "forca",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "panturrilhas"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000069",
+    "name": "Donkey Calf Raise",
+    "slug": "donkey-calf-raise",
+    "description": "Panturrilha inclinada.",
+    "instructions": "Pausa no topo.",
+    "primary_muscle": "panturrilhas",
+    "secondary_muscles": [],
+    "equipment": "maquinas",
+    "difficulty": "intermediario",
+    "movement_pattern": "carregamento",
+    "exercise_type": "hipertrofia",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "panturrilhas"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000070",
+    "name": "Prancha",
+    "slug": "prancha",
+    "description": "Isometria de core.",
+    "instructions": "Corpo alinhado.",
+    "primary_muscle": "core",
+    "secondary_muscles": [],
+    "equipment": "peso_corporal",
+    "difficulty": "iniciante",
+    "movement_pattern": "isometrico",
+    "exercise_type": "resistencia",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "core"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000071",
+    "name": "Prancha Lateral",
+    "slug": "prancha-lateral",
+    "description": "Estabilidade lateral.",
+    "instructions": "Linha reta.",
+    "primary_muscle": "core",
+    "secondary_muscles": [],
+    "equipment": "peso_corporal",
+    "difficulty": "iniciante",
+    "movement_pattern": "isometrico",
+    "exercise_type": "resistencia",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "core"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000072",
+    "name": "Abdominal Remador",
+    "slug": "abdominal-remador",
+    "description": "Sit-up controlado.",
+    "instructions": "Sem puxar o pescoço.",
+    "primary_muscle": "core",
+    "secondary_muscles": [],
+    "equipment": "peso_corporal",
+    "difficulty": "iniciante",
+    "movement_pattern": "rotacao",
+    "exercise_type": "resistencia",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "core"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000073",
+    "name": "Elevação de Pernas",
+    "slug": "elevacao-de-pernas",
+    "description": "Lower abs.",
+    "instructions": "Lombar colada.",
+    "primary_muscle": "core",
+    "secondary_muscles": [],
+    "equipment": "peso_corporal",
+    "difficulty": "intermediario",
+    "movement_pattern": "rotacao",
+    "exercise_type": "forca",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "core"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000074",
+    "name": "Dead Bug",
+    "slug": "dead-bug",
+    "description": "Anti-extensão.",
+    "instructions": "Lombar no chão.",
+    "primary_muscle": "core",
+    "secondary_muscles": [],
+    "equipment": "peso_corporal",
+    "difficulty": "iniciante",
+    "movement_pattern": "isometrico",
+    "exercise_type": "mobilidade",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "core",
+      "prehab"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000075",
+    "name": "Pallof Press",
+    "slug": "pallof-press",
+    "description": "Anti-rotação.",
+    "instructions": "Resista à rotação.",
+    "primary_muscle": "core",
+    "secondary_muscles": [],
+    "equipment": "elasticos",
+    "difficulty": "iniciante",
+    "movement_pattern": "isometrico",
+    "exercise_type": "forca",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "core"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000076",
+    "name": "Russian Twist",
+    "slug": "russian-twist",
+    "description": "Rotação de tronco.",
+    "instructions": "Gire com controle.",
+    "primary_muscle": "core",
+    "secondary_muscles": [],
+    "equipment": "halteres",
+    "difficulty": "iniciante",
+    "movement_pattern": "rotacao",
+    "exercise_type": "resistencia",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "core"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000077",
+    "name": "Ab Wheel Rollout",
+    "slug": "ab-wheel-rollout",
+    "description": "Rollout.",
+    "instructions": "Sem arquear a lombar.",
+    "primary_muscle": "core",
+    "secondary_muscles": [],
+    "equipment": "peso_corporal",
+    "difficulty": "avancado",
+    "movement_pattern": "isometrico",
+    "exercise_type": "forca",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "core"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000078",
+    "name": "Hollow Body Hold",
+    "slug": "hollow-body-hold",
+    "description": "Isometria oca.",
+    "instructions": "Lombar colada.",
+    "primary_muscle": "core",
+    "secondary_muscles": [],
+    "equipment": "peso_corporal",
+    "difficulty": "intermediario",
+    "movement_pattern": "isometrico",
+    "exercise_type": "forca",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "core"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000079",
+    "name": "Cable Crunch",
+    "slug": "cable-crunch",
+    "description": "Abdominal no cabo.",
+    "instructions": "Flexione o tronco.",
+    "primary_muscle": "core",
+    "secondary_muscles": [],
+    "equipment": "maquinas",
+    "difficulty": "iniciante",
+    "movement_pattern": "rotacao",
+    "exercise_type": "hipertrofia",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "core"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000080",
+    "name": "Cat-Cow",
+    "slug": "cat-cow",
+    "description": "Mobilidade de coluna.",
+    "instructions": "Alterne flexão e extensão.",
+    "primary_muscle": "mobilidade",
+    "secondary_muscles": [
+      "core"
+    ],
+    "equipment": "peso_corporal",
+    "difficulty": "iniciante",
+    "movement_pattern": "mobilidade",
+    "exercise_type": "mobilidade",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "mobilidade"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000081",
+    "name": "World Greatest Stretch",
+    "slug": "world-greatest-stretch",
+    "description": "Alongamento multiplanar.",
+    "instructions": "Afundo + rotação torácica.",
+    "primary_muscle": "mobilidade",
+    "secondary_muscles": [
+      "gluteos",
+      "posteriores"
+    ],
+    "equipment": "peso_corporal",
+    "difficulty": "iniciante",
+    "movement_pattern": "mobilidade",
+    "exercise_type": "mobilidade",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "mobilidade"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000082",
+    "name": "90/90 Hip Stretch",
+    "slug": "90-90-hip-stretch",
+    "description": "Mobilidade de quadril.",
+    "instructions": "Tronco ereto.",
+    "primary_muscle": "mobilidade",
+    "secondary_muscles": [
+      "gluteos"
+    ],
+    "equipment": "peso_corporal",
+    "difficulty": "iniciante",
+    "movement_pattern": "mobilidade",
+    "exercise_type": "mobilidade",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "mobilidade"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000083",
+    "name": "Thoracic Opener",
+    "slug": "thoracic-opener",
+    "description": "Abertura torácica.",
+    "instructions": "Abra o peito.",
+    "primary_muscle": "mobilidade",
+    "secondary_muscles": [
+      "ombros"
+    ],
+    "equipment": "peso_corporal",
+    "difficulty": "iniciante",
+    "movement_pattern": "mobilidade",
+    "exercise_type": "mobilidade",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "mobilidade"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000084",
+    "name": "Ankle Rocks",
+    "slug": "ankle-rocks",
+    "description": "Mobilidade de tornozelo.",
+    "instructions": "Calcanhar no chão.",
+    "primary_muscle": "mobilidade",
+    "secondary_muscles": [],
+    "equipment": "peso_corporal",
+    "difficulty": "iniciante",
+    "movement_pattern": "mobilidade",
+    "exercise_type": "mobilidade",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "mobilidade"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000085",
+    "name": "Shoulder Dislocates com Elástico",
+    "slug": "shoulder-dislocates-com-elastico",
+    "description": "Circondução de ombro.",
+    "instructions": "Arco amplo sem dor.",
+    "primary_muscle": "mobilidade",
+    "secondary_muscles": [
+      "ombros"
+    ],
+    "equipment": "elasticos",
+    "difficulty": "iniciante",
+    "movement_pattern": "mobilidade",
+    "exercise_type": "mobilidade",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "mobilidade"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000086",
+    "name": "Open Book Stretch",
+    "slug": "open-book-stretch",
+    "description": "Rotação torácica.",
+    "instructions": "Acompanhe a mão com o olhar.",
+    "primary_muscle": "mobilidade",
+    "secondary_muscles": [],
+    "equipment": "peso_corporal",
+    "difficulty": "iniciante",
+    "movement_pattern": "mobilidade",
+    "exercise_type": "mobilidade",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "mobilidade"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000087",
+    "name": "Couch Stretch",
+    "slug": "couch-stretch",
+    "description": "Alongamento de flexores.",
+    "instructions": "Tronco ereto.",
+    "primary_muscle": "mobilidade",
+    "secondary_muscles": [
+      "quadriceps",
+      "gluteos"
+    ],
+    "equipment": "peso_corporal",
+    "difficulty": "iniciante",
+    "movement_pattern": "mobilidade",
+    "exercise_type": "mobilidade",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "mobilidade"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000088",
+    "name": "Box Jump",
+    "slug": "box-jump",
+    "description": "Salto na caixa.",
+    "instructions": "Aterrisagem macia.",
+    "primary_muscle": "explosao",
+    "secondary_muscles": [
+      "quadriceps",
+      "gluteos"
+    ],
+    "equipment": "peso_corporal",
+    "difficulty": "intermediario",
+    "movement_pattern": "pliometrico",
+    "exercise_type": "potencia",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "explosao",
+      "pliometria"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000089",
+    "name": "Broad Jump",
+    "slug": "broad-jump",
+    "description": "Salto horizontal.",
+    "instructions": "Aterrisagem estável.",
+    "primary_muscle": "explosao",
+    "secondary_muscles": [
+      "gluteos",
+      "posteriores"
+    ],
+    "equipment": "peso_corporal",
+    "difficulty": "intermediario",
+    "movement_pattern": "pliometrico",
+    "exercise_type": "potencia",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "explosao"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000090",
+    "name": "Medicine Ball Slam",
+    "slug": "medicine-ball-slam",
+    "description": "Arremesso ao solo.",
+    "instructions": "Slam com intenção.",
+    "primary_muscle": "explosao",
+    "secondary_muscles": [
+      "core",
+      "ombros"
+    ],
+    "equipment": "academia_basica",
+    "difficulty": "iniciante",
+    "movement_pattern": "pliometrico",
+    "exercise_type": "potencia",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "explosao"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000091",
+    "name": "Kettlebell Swing",
+    "slug": "kettlebell-swing",
+    "description": "Swing de potência.",
+    "instructions": "Hinge explosivo.",
+    "primary_muscle": "explosao",
+    "secondary_muscles": [
+      "gluteos",
+      "posteriores",
+      "core"
+    ],
+    "equipment": "academia_basica",
+    "difficulty": "intermediario",
+    "movement_pattern": "hinge",
+    "exercise_type": "potencia",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "explosao",
+      "hinge"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000092",
+    "name": "Jump Squat",
+    "slug": "jump-squat",
+    "description": "Agachamento com salto.",
+    "instructions": "Aterrisagem controlada.",
+    "primary_muscle": "explosao",
+    "secondary_muscles": [
+      "quadriceps",
+      "gluteos"
+    ],
+    "equipment": "peso_corporal",
+    "difficulty": "iniciante",
+    "movement_pattern": "pliometrico",
+    "exercise_type": "potencia",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "explosao"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000093",
+    "name": "Pogo Hops",
+    "slug": "pogo-hops",
+    "description": "Saltitos elásticos.",
+    "instructions": "Contato rápido.",
+    "primary_muscle": "explosao",
+    "secondary_muscles": [
+      "panturrilhas"
+    ],
+    "equipment": "peso_corporal",
+    "difficulty": "iniciante",
+    "movement_pattern": "pliometrico",
+    "exercise_type": "potencia",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "explosao"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000094",
+    "name": "Depth Jump",
+    "slug": "depth-jump",
+    "description": "Salto após queda.",
+    "instructions": "Minimize o tempo de contato.",
+    "primary_muscle": "explosao",
+    "secondary_muscles": [
+      "quadriceps"
+    ],
+    "equipment": "peso_corporal",
+    "difficulty": "avancado",
+    "movement_pattern": "pliometrico",
+    "exercise_type": "potencia",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "explosao"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000095",
+    "name": "MB Rotational Throw",
+    "slug": "mb-rotational-throw",
+    "description": "Arremesso rotacional.",
+    "instructions": "Transfira força do solo.",
+    "primary_muscle": "explosao",
+    "secondary_muscles": [
+      "core"
+    ],
+    "equipment": "academia_basica",
+    "difficulty": "intermediario",
+    "movement_pattern": "rotacao",
+    "exercise_type": "potencia",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "explosao",
+      "futebol"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000096",
+    "name": "Sprint 20m",
+    "slug": "sprint-20m",
+    "description": "Aceleração curta.",
+    "instructions": "Inclinação inicial.",
+    "primary_muscle": "sprint",
+    "secondary_muscles": [
+      "gluteos",
+      "quadriceps"
+    ],
+    "equipment": "peso_corporal",
+    "difficulty": "intermediario",
+    "movement_pattern": "locomocao",
+    "exercise_type": "potencia",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "sprint",
+      "futebol"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000097",
+    "name": "Sprint 40m",
+    "slug": "sprint-40m",
+    "description": "Velocidade máxima.",
+    "instructions": "Recupere entre reps.",
+    "primary_muscle": "sprint",
+    "secondary_muscles": [
+      "gluteos",
+      "quadriceps"
+    ],
+    "equipment": "peso_corporal",
+    "difficulty": "intermediario",
+    "movement_pattern": "locomocao",
+    "exercise_type": "potencia",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "sprint"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000098",
+    "name": "Falling Start Sprint",
+    "slug": "falling-start-sprint",
+    "description": "Saída em queda.",
+    "instructions": "Caia e acelere.",
+    "primary_muscle": "sprint",
+    "secondary_muscles": [],
+    "equipment": "peso_corporal",
+    "difficulty": "intermediario",
+    "movement_pattern": "locomocao",
+    "exercise_type": "potencia",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "sprint"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000099",
+    "name": "A-Skips",
+    "slug": "a-skips",
+    "description": "Drill técnico.",
+    "instructions": "Joelho alto.",
+    "primary_muscle": "sprint",
+    "secondary_muscles": [],
+    "equipment": "peso_corporal",
+    "difficulty": "iniciante",
+    "movement_pattern": "locomocao",
+    "exercise_type": "agilidade",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "sprint",
+      "tecnica"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000100",
+    "name": "Wall Drive",
+    "slug": "wall-drive",
+    "description": "Aceleração no muro.",
+    "instructions": "Inclinação cerca de 45°.",
+    "primary_muscle": "sprint",
+    "secondary_muscles": [
+      "gluteos"
+    ],
+    "equipment": "peso_corporal",
+    "difficulty": "iniciante",
+    "movement_pattern": "locomocao",
+    "exercise_type": "potencia",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "sprint"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000101",
+    "name": "Flying 30s",
+    "slug": "flying-30s",
+    "description": "Corrida lançada.",
+    "instructions": "Mantenha velocidade máxima.",
+    "primary_muscle": "sprint",
+    "secondary_muscles": [],
+    "equipment": "peso_corporal",
+    "difficulty": "avancado",
+    "movement_pattern": "locomocao",
+    "exercise_type": "potencia",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "sprint"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000102",
+    "name": "Wicket Runs",
+    "slug": "wicket-runs",
+    "description": "Corrida com obstáculos baixos.",
+    "instructions": "Frequência alta.",
+    "primary_muscle": "sprint",
+    "secondary_muscles": [],
+    "equipment": "peso_corporal",
+    "difficulty": "intermediario",
+    "movement_pattern": "locomocao",
+    "exercise_type": "agilidade",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "sprint"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000103",
+    "name": "Ladder Quick Feet",
+    "slug": "ladder-quick-feet",
+    "description": "Escada de agilidade.",
+    "instructions": "Cadência rápida.",
+    "primary_muscle": "agilidade",
+    "secondary_muscles": [],
+    "equipment": "peso_corporal",
+    "difficulty": "iniciante",
+    "movement_pattern": "locomocao",
+    "exercise_type": "agilidade",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "agilidade"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000104",
+    "name": "Cone Shuffle",
+    "slug": "cone-shuffle",
+    "description": "Deslocamento lateral.",
+    "instructions": "Quadril baixo.",
+    "primary_muscle": "agilidade",
+    "secondary_muscles": [],
+    "equipment": "peso_corporal",
+    "difficulty": "iniciante",
+    "movement_pattern": "locomocao",
+    "exercise_type": "agilidade",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "agilidade",
+      "futebol"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000105",
+    "name": "5-10-5 Pro Agility",
+    "slug": "5-10-5-pro-agility",
+    "description": "Mudança de direção.",
+    "instructions": "Toque a linha e mude.",
+    "primary_muscle": "agilidade",
+    "secondary_muscles": [],
+    "equipment": "peso_corporal",
+    "difficulty": "intermediario",
+    "movement_pattern": "locomocao",
+    "exercise_type": "agilidade",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "agilidade"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000106",
+    "name": "T-Drill",
+    "slug": "t-drill",
+    "description": "Drill em T.",
+    "instructions": "Sprint, shuffle e backpedal.",
+    "primary_muscle": "agilidade",
+    "secondary_muscles": [],
+    "equipment": "peso_corporal",
+    "difficulty": "intermediario",
+    "movement_pattern": "locomocao",
+    "exercise_type": "agilidade",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "agilidade"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000107",
+    "name": "Reactive Mirror Drill",
+    "slug": "reactive-mirror-drill",
+    "description": "Reação a estímulo.",
+    "instructions": "Espelhe o sinal.",
+    "primary_muscle": "agilidade",
+    "secondary_muscles": [],
+    "equipment": "peso_corporal",
+    "difficulty": "avancado",
+    "movement_pattern": "locomocao",
+    "exercise_type": "agilidade",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "agilidade",
+      "futebol"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000108",
+    "name": "Lateral Bound",
+    "slug": "lateral-bound",
+    "description": "Salto lateral.",
+    "instructions": "Aterrisagem estável.",
+    "primary_muscle": "agilidade",
+    "secondary_muscles": [
+      "gluteos"
+    ],
+    "equipment": "peso_corporal",
+    "difficulty": "intermediario",
+    "movement_pattern": "pliometrico",
+    "exercise_type": "agilidade",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "agilidade"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000109",
+    "name": "Carioca Drill",
+    "slug": "carioca-drill",
+    "description": "Deslocamento cruzado.",
+    "instructions": "Ritmo cadenciado.",
+    "primary_muscle": "agilidade",
+    "secondary_muscles": [],
+    "equipment": "peso_corporal",
+    "difficulty": "iniciante",
+    "movement_pattern": "locomocao",
+    "exercise_type": "agilidade",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "agilidade"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000110",
+    "name": "Burpee",
+    "slug": "burpee",
+    "description": "Full body.",
+    "instructions": "Movimento fluido.",
+    "primary_muscle": "condicionamento",
+    "secondary_muscles": [
+      "peito",
+      "quadriceps",
+      "core"
+    ],
+    "equipment": "peso_corporal",
+    "difficulty": "intermediario",
+    "movement_pattern": "locomocao",
+    "exercise_type": "cardio",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "condicionamento"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000111",
+    "name": "Mountain Climbers",
+    "slug": "mountain-climbers",
+    "description": "Corrida isométrica.",
+    "instructions": "Quadril estável.",
+    "primary_muscle": "condicionamento",
+    "secondary_muscles": [
+      "core"
+    ],
+    "equipment": "peso_corporal",
+    "difficulty": "iniciante",
+    "movement_pattern": "locomocao",
+    "exercise_type": "cardio",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "condicionamento"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000112",
+    "name": "Battle Ropes",
+    "slug": "battle-ropes",
+    "description": "Ondas com cordas.",
+    "instructions": "Joelhos soft.",
+    "primary_muscle": "condicionamento",
+    "secondary_muscles": [
+      "ombros",
+      "core"
+    ],
+    "equipment": "academia_basica",
+    "difficulty": "intermediario",
+    "movement_pattern": "locomocao",
+    "exercise_type": "cardio",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "condicionamento"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000113",
+    "name": "Assault Bike Intervals",
+    "slug": "assault-bike-intervals",
+    "description": "Intervalos na bike.",
+    "instructions": "Alterne sprint e recuperação.",
+    "primary_muscle": "condicionamento",
+    "secondary_muscles": [],
+    "equipment": "maquinas",
+    "difficulty": "intermediario",
+    "movement_pattern": "locomocao",
+    "exercise_type": "cardio",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "condicionamento"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000114",
+    "name": "Rowing Erg 500m",
+    "slug": "rowing-erg-500m",
+    "description": "Remo ergômetro.",
+    "instructions": "Pernas-tronco-braços.",
+    "primary_muscle": "condicionamento",
+    "secondary_muscles": [
+      "costas"
+    ],
+    "equipment": "maquinas",
+    "difficulty": "intermediario",
+    "movement_pattern": "locomocao",
+    "exercise_type": "cardio",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "condicionamento"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000115",
+    "name": "Jumping Jacks",
+    "slug": "jumping-jacks",
+    "description": "Aquecimento clássico.",
+    "instructions": "Ritmo constante.",
+    "primary_muscle": "condicionamento",
+    "secondary_muscles": [],
+    "equipment": "peso_corporal",
+    "difficulty": "iniciante",
+    "movement_pattern": "locomocao",
+    "exercise_type": "cardio",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "condicionamento"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000116",
+    "name": "Farmers Walk",
+    "slug": "farmers-walk",
+    "description": "Loaded carry.",
+    "instructions": "Ombros baixos.",
+    "primary_muscle": "condicionamento",
+    "secondary_muscles": [
+      "core",
+      "ombros"
+    ],
+    "equipment": "halteres",
+    "difficulty": "iniciante",
+    "movement_pattern": "carregamento",
+    "exercise_type": "forca",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "condicionamento",
+      "core"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000117",
+    "name": "Shuttle Run 10m",
+    "slug": "shuttle-run-10m",
+    "description": "Vaivém curto.",
+    "instructions": "Toque a linha e mude.",
+    "primary_muscle": "condicionamento",
+    "secondary_muscles": [],
+    "equipment": "peso_corporal",
+    "difficulty": "iniciante",
+    "movement_pattern": "locomocao",
+    "exercise_type": "cardio",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "condicionamento",
+      "futebol"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000118",
+    "name": "Sled Push",
+    "slug": "sled-push",
+    "description": "Empurrão de trenó.",
+    "instructions": "Passos poderosos.",
+    "primary_muscle": "condicionamento",
+    "secondary_muscles": [
+      "quadriceps",
+      "gluteos"
+    ],
+    "equipment": "academia_completa",
+    "difficulty": "intermediario",
+    "movement_pattern": "locomocao",
+    "exercise_type": "forca",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "condicionamento"
+    ],
+    "is_active": true
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000119",
+    "name": "Sled Pull",
+    "slug": "sled-pull",
+    "description": "Puxada de trenó.",
+    "instructions": "Passada longa.",
+    "primary_muscle": "condicionamento",
+    "secondary_muscles": [
+      "costas",
+      "posteriores"
+    ],
+    "equipment": "academia_completa",
+    "difficulty": "intermediario",
+    "movement_pattern": "locomocao",
+    "exercise_type": "forca",
+    "video_url": "https://www.youtube.com/embed/IODxDxX7oi4",
+    "thumbnail_url": null,
+    "image_url": null,
+    "tags": [
+      "condicionamento"
+    ],
+    "is_active": true
+  }
+]

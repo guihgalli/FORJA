@@ -1,0 +1,40 @@
+project_id = "forja"
+
+[api]
+enabled = true
+port = 54321
+
+[db]
+port = 54322
+major_version = 15
+
+[auth]
+enabled = true
+site_url = "http://localhost:3000"
+additional_redirect_urls = ["http://localhost:3000/dashboard"]
+
+[auth.external.google]
+enabled = true
+client_id = "env(GOOGLE_CLIENT_ID)"
+secret = "env(GOOGLE_CLIENT_SECRET)"
+
+[functions.generate-workout]
+verify_jwt = true
+
+[functions.generate-periodization]
+verify_jwt = true
+
+[functions.adapt-workout]
+verify_jwt = true
+
+[functions.calculate-progress]
+verify_jwt = true
+
+[functions.generate-report]
+verify_jwt = true
+
+[functions.process-video]
+verify_jwt = true
+
+[functions.send-notification]
+verify_jwt = true

@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #07110d;
+  --bg-elevated: #0d1b14;
+  --accent: #4ade80;
+  --accent-foreground: #052e16;
+  --ink: #f3faf6;
+  --muted: rgba(243, 250, 246, 0.62);
+  --danger: #fb7185;
+  --warning: #fbbf24;
+}
+
+@theme inline {
+  --color-background: var(--bg);
+  --color-foreground: var(--ink);
+  --font-sans: var(--font-body);
+  --font-display: var(--font-display);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  background:
+    radial-gradient(1200px 600px at 10% -10%, rgba(74, 222, 128, 0.16), transparent 55%),
+    radial-gradient(900px 500px at 90% 0%, rgba(16, 185, 129, 0.12), transparent 50%),
+    linear-gradient(180deg, #08140f 0%, #07110d 40%, #050b08 100%);
+  color: var(--ink);
+  font-family: var(--font-body), sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+::selection {
+  background: rgba(74, 222, 128, 0.35);
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-soft {
+  0%,
+  100% {
+    opacity: 0.55;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.animate-in-up {
+  animation: rise 0.45s ease-out both;
+}
+
+.animate-pulse-soft {
+  animation: pulse-soft 2.4s ease-in-out infinite;
+}
+
+.mesh-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+.glass {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(16px);
+}
