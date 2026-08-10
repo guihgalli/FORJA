@@ -7,6 +7,7 @@ import {
   demoHistory,
   demoProfile,
 } from "@/lib/demo/store";
+import { loadAthleteProfile } from "@/lib/profile/load";
 
 const BodySchema = z.object({
   goal: z.string(),
@@ -19,25 +20,35 @@ const BodySchema = z.object({
   preferences: z.string().optional(),
 });
 
+function filterExercises(equipment: string[]) {
+  return demoExercises.filter((e) => {
+    if (equipment.includes("academia_completa")) return true;
+    return equipment.includes(e.equipment) || e.equipment === "peso_corporal";
+  });
+}
+
 export async function POST(req: Request) {
   try {
     const body = BodySchema.parse(await req.json());
 
-    // Rate limit simples por IP (edge/worker pode reforçar)
     const ip = req.headers.get("x-forwarded-for") ?? "local";
     if (ip.length > 500) {
       return NextResponse.json({ error: "Unauthorized" }, { status: 429 });
     }
 
+    const loaded = await loadAthleteProfile();
+    if ("error" in loaded) {
+      return NextResponse.json({ error: loaded.error }, { status: loaded.status });
+    }
+
+    const profile = loaded.profile.profile_completed_at
+      ? loaded.profile
+      : demoProfile;
+
     const result = await generateWorkoutWithAI({
-      profile: demoProfile as unknown as Record<string, unknown>,
+      profile: profile as unknown as Record<string, unknown>,
       history: demoHistory,
-      exercises: demoExercises.filter((e) => {
-        if (body.equipment.includes("academia_completa")) return true;
-        return (
-          body.equipment.includes(e.equipment) || e.equipment === "peso_corporal"
-        );
-      }),
+      exercises: filterExercises(body.equipment),
       calendar: demoCalendar,
       form: {
         goal: body.goal,
