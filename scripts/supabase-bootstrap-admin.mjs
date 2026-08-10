@@ -42,15 +42,14 @@ const TEST_EMAILS = new Set([
 ]);
 
 const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
-const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+const serviceKey =
+  process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.SUPABASE_SECRET_KEY;
 const dbUrl = process.env.SUPABASE_DB_URL;
+const dbPassword = process.env.SUPABASE_DB_PASSWORD;
 
 if (!url || !serviceKey) {
   console.error(
-    "Faltam NEXT_PUBLIC_SUPABASE_URL e/ou SUPABASE_SERVICE_ROLE_KEY",
-  );
-  console.error(
-    "No Dashboard: Settings → API → service_role (secret). A anon/publishable não basta.",
+    "Faltam NEXT_PUBLIC_SUPABASE_URL e/ou SUPABASE_SERVICE_ROLE_KEY (sb_secret_...)",
   );
   process.exit(1);
 }
@@ -59,10 +58,19 @@ const admin = createClient(url, serviceKey, {
   auth: { persistSession: false, autoRefreshToken: false },
 });
 
+function resolveDbUrl() {
+  if (dbUrl) return dbUrl;
+  if (!dbPassword) return null;
+  // Pooler session mode — região us-east (host direto do projeto)
+  const ref = new URL(url).hostname.split(".")[0];
+  return `postgresql://postgres.${ref}:${encodeURIComponent(dbPassword)}@aws-0-us-east-1.pooler.supabase.com:5432/postgres?sslmode=require`;
+}
+
 function applyMigrationsWithPsql() {
-  if (!dbUrl) {
+  const connection = resolveDbUrl();
+  if (!connection) {
     console.log(
-      "SUPABASE_DB_URL ausente — pulando SQL migrations (rode no SQL Editor se necessário).",
+      "SUPABASE_DB_URL / SUPABASE_DB_PASSWORD ausente — pulando SQL migrations.",
     );
     return false;
   }
@@ -76,7 +84,7 @@ function applyMigrationsWithPsql() {
     const sql = readFileSync(path, "utf8");
     const result = spawnSync(
       "psql",
-      [dbUrl, "-v", "ON_ERROR_STOP=1", "-c", sql],
+      [connection, "-v", "ON_ERROR_STOP=1", "-c", sql],
       { encoding: "utf8", maxBuffer: 20 * 1024 * 1024 },
     );
     if (result.status !== 0) {
