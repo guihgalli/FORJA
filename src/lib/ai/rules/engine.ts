@@ -15,6 +15,11 @@ export type RuleContext = {
   maxExercises?: number;
   maxSetsPerExercise?: number;
   avoidHeavyLegsBeforeGameHours?: number;
+  genderVolume?: {
+    primaryMuscles: Set<string>;
+    minPrimaryShare: number;
+  };
+  skipGenderVolume?: boolean;
 };
 
 const HEAVY_LEG_MUSCLES = new Set([
@@ -116,6 +121,23 @@ export function validateWorkoutAgainstRules(
       message: "Volume total de séries acima do limite de segurança (36).",
       severity: "error",
     });
+  }
+
+  if (ctx.genderVolume && !ctx.skipGenderVolume && volume > 0) {
+    const primarySets = workout.exercises.reduce((acc, ex) => {
+      const meta = ctx.exercisesById.get(ex.exercise_id);
+      return meta && ctx.genderVolume!.primaryMuscles.has(meta.primary_muscle)
+        ? acc + ex.sets
+        : acc;
+    }, 0);
+    const share = primarySets / volume;
+    if (share < ctx.genderVolume.minPrimaryShare) {
+      violations.push({
+        code: "GENDER_VOLUME",
+        message: `Treino não respeita a ênfase do sexo (mínimo ${Math.round(ctx.genderVolume.minPrimaryShare * 100)}% de séries nos grupos prioritários).`,
+        severity: "error",
+      });
+    }
   }
 
   return violations;

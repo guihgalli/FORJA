@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
+import { assertProfileTrainingSex } from "@/lib/ai/assert-training-sex";
 import { generateWorkoutWithAI } from "@/lib/ai/service";
 import {
   demoCalendar,
@@ -45,7 +46,10 @@ export async function POST(req: Request) {
       ? loaded.profile
       : demoProfile;
 
+    const trainingSex = assertProfileTrainingSex(profile);
+
     const result = await generateWorkoutWithAI({
+      trainingSex,
       profile: profile as unknown as Record<string, unknown>,
       history: demoHistory,
       exercises: filterExercises(body.equipment),

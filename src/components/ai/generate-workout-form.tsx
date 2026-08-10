@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
@@ -8,6 +9,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
 import type { GenerateWorkoutFormValues } from "@/lib/ai/generate-form";
+import type { TrainingSex } from "@/lib/ai/gender-training";
 
 const GOALS = [
   "Hipertrofia",
@@ -74,9 +76,13 @@ const DEFAULT_VALUES: GenerateWorkoutFormValues = {
 export function GenerateWorkoutForm({
   initialValues,
   fromOnboarding = false,
+  trainingSex = null,
+  trainingSexLabel = null,
 }: {
   initialValues?: Partial<GenerateWorkoutFormValues>;
   fromOnboarding?: boolean;
+  trainingSex?: TrainingSex | null;
+  trainingSexLabel?: string | null;
 }) {
   const defaults = { ...DEFAULT_VALUES, ...initialValues };
   const [goal, setGoal] = useState(defaults.goal);
@@ -91,6 +97,7 @@ export function GenerateWorkoutForm({
   const [result, setResult] = useState<unknown>(null);
   const [error, setError] = useState<string | null>(null);
   const [usage, setUsage] = useState("7/10 gerações utilizadas");
+  const canGenerate = Boolean(trainingSex);
 
   function toggle(list: string[], value: string, setter: (v: string[]) => void) {
     setter(
@@ -135,15 +142,33 @@ export function GenerateWorkoutForm({
   return (
     <div className="space-y-6 pb-28">
       <header className="space-y-2">
-        <Badge className="border-emerald-400/30 bg-emerald-400/10 text-emerald-200">
-          {usage}
-        </Badge>
+        <div className="flex flex-wrap gap-2">
+          <Badge className="border-emerald-400/30 bg-emerald-400/10 text-emerald-200">
+            {usage}
+          </Badge>
+          {trainingSexLabel && (
+            <Badge className="border-sky-400/30 bg-sky-400/10 text-sky-100">
+              {trainingSexLabel}
+            </Badge>
+          )}
+        </div>
         <h1 className="font-[family-name:var(--font-display)] text-4xl text-white">
           ✨ Gerar treino com IA
         </h1>
         <p className="text-white/60">
-          A IA seleciona exercícios da biblioteca e retorna JSON validado.
+          A IA monta treinos distintos para perfil masculino e feminino, com
+          base no seu questionário.
         </p>
+        {!canGenerate && (
+          <p className="rounded-xl border border-amber-400/30 bg-amber-400/10 p-3 text-sm text-amber-100">
+            Informe masculino ou feminino no{" "}
+            <Link href="/profile" className="underline underline-offset-2">
+              perfil
+            </Link>{" "}
+            para gerar treino. Treinos masculino e feminino são programações
+            completamente diferentes.
+          </p>
+        )}
         {fromOnboarding && (
           <p className="rounded-xl border border-emerald-400/30 bg-emerald-400/10 p-3 text-sm text-emerald-100">
             Campos pré-preenchidos com base no seu questionário de onboarding.
@@ -254,7 +279,7 @@ export function GenerateWorkoutForm({
       <div className="grid gap-3 sm:grid-cols-2">
         <Button
           size="lg"
-          disabled={loading}
+          disabled={loading || !canGenerate}
           onClick={() => onSubmit("workout")}
           className="w-full"
         >
@@ -264,7 +289,7 @@ export function GenerateWorkoutForm({
         <Button
           size="lg"
           variant="secondary"
-          disabled={loading}
+          disabled={loading || !canGenerate}
           onClick={() => onSubmit("periodization")}
           className="w-full"
         >
