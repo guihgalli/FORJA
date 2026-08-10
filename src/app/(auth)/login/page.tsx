@@ -41,9 +41,7 @@ function LoginForm() {
   const [message, setMessage] = useState<string | null>(
     oauthError ? decodeURIComponent(oauthError) : null,
   );
-  const [loading, setLoading] = useState<"email" | "google" | "demo" | null>(
-    null,
-  );
+  const [loading, setLoading] = useState<"email" | "google" | null>(null);
   const configured = isSupabaseConfigured();
 
   async function onSubmit(e: React.FormEvent) {
@@ -52,8 +50,10 @@ function LoginForm() {
     setMessage(null);
 
     if (!configured) {
-      setMessage("Modo demo: configure o Supabase para autenticar de verdade.");
-      window.location.href = next.startsWith("/") ? next : "/dashboard";
+      setMessage(
+        "Autenticação indisponível: configure NEXT_PUBLIC_SUPABASE_URL e NEXT_PUBLIC_SUPABASE_ANON_KEY.",
+      );
+      setLoading(null);
       return;
     }
 
@@ -102,11 +102,6 @@ function LoginForm() {
       setMessage(error.message);
       setLoading(null);
     }
-  }
-
-  function demoAdmin() {
-    setLoading("demo");
-    window.location.href = "/admin";
   }
 
   return (
@@ -183,18 +178,6 @@ function LoginForm() {
           {loading === "email" ? "Entrando…" : "Entrar"}
         </Button>
       </form>
-
-      {!configured && (
-        <Button
-          type="button"
-          variant="outline"
-          className="mt-3 w-full"
-          onClick={demoAdmin}
-          disabled={loading !== null}
-        >
-          Entrar como admin (demo)
-        </Button>
-      )}
 
       <div className="mt-4 flex justify-between text-sm text-white/55">
         <Link href="/forgot-password">Esqueci a senha</Link>

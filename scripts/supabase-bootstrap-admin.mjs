@@ -169,6 +169,7 @@ async function main() {
     "Restantes:",
     remaining.map((u) => u.email).join(", ") || "(nenhum)",
   );
+  console.log("Ambiente Auth pronto para produção (sem usuários demo).");
 }
 
 main().catch((err) => {

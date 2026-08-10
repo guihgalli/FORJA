@@ -3,11 +3,13 @@ import { requireAdminProfile, getCurrentProfile } from "@/lib/auth/session";
 import { createClient } from "@/lib/supabase/server";
 import { isAppRole } from "@/lib/auth/roles";
 import { isSupabaseConfigured } from "@/lib/supabase/env";
-import { demoAdminUsers } from "@/lib/demo/store";
 
 export async function GET() {
   if (!isSupabaseConfigured()) {
-    return NextResponse.json({ users: demoAdminUsers, demo: true });
+    return NextResponse.json(
+      { error: "Supabase não configurado" },
+      { status: 503 },
+    );
   }
 
   const admin = await requireAdminProfile();
@@ -30,20 +32,15 @@ export async function GET() {
     return NextResponse.json({ error: error.message }, { status: 500 });
   }
 
-  return NextResponse.json({ users: data ?? [], demo: false });
+  return NextResponse.json({ users: data ?? [] });
 }
 
 export async function PATCH(request: Request) {
   if (!isSupabaseConfigured()) {
-    const body = (await request.json()) as { id?: string; role?: string };
-    if (!body.id || !isAppRole(body.role)) {
-      return NextResponse.json({ error: "Payload inválido" }, { status: 400 });
-    }
-    return NextResponse.json({
-      ok: true,
-      demo: true,
-      user: { id: body.id, role: body.role },
-    });
+    return NextResponse.json(
+      { error: "Supabase não configurado" },
+      { status: 503 },
+    );
   }
 
   const admin = await requireAdminProfile();

@@ -30,8 +30,18 @@ export async function updateSession(request: NextRequest) {
   const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
   const pathname = request.nextUrl.pathname;
 
-  // Sem Supabase: modo demo — libera tudo
+  // Sem Supabase: bloqueia rotas protegidas (produção exige Auth real)
   if (!url || !key) {
+    if (isProtectedPath(pathname)) {
+      const redirectUrl = request.nextUrl.clone();
+      redirectUrl.pathname = "/login";
+      redirectUrl.searchParams.set("next", pathname);
+      redirectUrl.searchParams.set(
+        "error",
+        "Configure o Supabase para acessar o app em produção.",
+      );
+      return NextResponse.redirect(redirectUrl);
+    }
     return supabaseResponse;
   }
 
