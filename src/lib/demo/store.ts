@@ -227,30 +227,3 @@ export const demoTrainerStats = {
     "1 aluno reportou dor moderada",
   ],
 };
-
-export const demoAdminUsers = [
-  {
-    id: "demo-admin",
-    email: "admin@forja.app",
-    full_name: "Admin FORJA",
-    avatar_url: null as string | null,
-    role: "ADMIN" as const,
-    created_at: "2026-01-10T12:00:00.000Z",
-  },
-  {
-    id: "demo-trainer",
-    email: "personal@forja.app",
-    full_name: "Marina Personal",
-    avatar_url: null as string | null,
-    role: "TRAINER" as const,
-    created_at: "2026-02-01T12:00:00.000Z",
-  },
-  {
-    id: "demo-student",
-    email: "aluno@forja.app",
-    full_name: "Guilherme Galli",
-    avatar_url: null as string | null,
-    role: "STUDENT" as const,
-    created_at: "2026-03-01T12:00:00.000Z",
-  },
-];

@@ -47,8 +47,20 @@ Com `PGPASSWORD` / `SUPABASE_DB_PASSWORD`.
 2. `20260322000002_seed_exercises.sql`
 3. `20260322120000_admin_auth.sql`
 4. `20260322130000_bootstrap_admin_galli.sql`
+5. `20260322140000_promote_admin_on_signup.sql`
+6. `20260322150000_exercise_video_urls.sql`
+7. `20260322160000_cleanup_demo_users.sql` — remove Auth users demo/teste
 
 Ou: `npm run db:apply-migrations` / `npm run db:bootstrap-admin`
+
+## Limpeza de usuários demo (produção)
+
+```bash
+# Requer NEXT_PUBLIC_SUPABASE_URL + SUPABASE_SERVICE_ROLE_KEY
+npm run db:bootstrap-admin
+```
+
+Emails removidos: `admin@forja.app`, `personal@forja.app`, `aluno@forja.app`, `demo@forja.app`, `test@*`, `teste@*`, `*@forja.app` (exceto o admin real).
 
 ## Deploy Cloudflare
 
