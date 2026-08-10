@@ -63,7 +63,7 @@ function resolveDbUrl() {
   if (!dbPassword) return null;
   // Pooler IPv4 — aws-1-us-west-2 (mesmo padrão CCTVC)
   const ref = new URL(url).hostname.split(".")[0];
-  return `postgresql://postgres.${ref}:${encodeURIComponent(dbPassword)}@aws-1-us-west-2.pooler.supabase.com:6543/postgres?sslmode=require`;
+  return `postgresql://postgres.${ref}:${encodeURIComponent(dbPassword)}@aws-1-us-west-2.pooler.supabase.com:5432/postgres?sslmode=require`;
 }
 
 function applyMigrationsWithPsql() {

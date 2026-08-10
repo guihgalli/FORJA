@@ -1,0 +1,42 @@
+---
+description: Supabase FORJA em produção (Cursor Cloud — sem ambiente local)
+alwaysApply: true
+---
+
+# Supabase — produção (Cursor Cloud)
+
+Este projeto **não roda localmente**. Produção = merge em **`main`** → deploy Cloudflare via Actions.
+
+Antes de qualquer operação Supabase (SQL, Auth Admin, schema, bootstrap), leia a skill **`.cursor/skills/supabase-forja/SKILL.md`**.
+
+## Projeto (público)
+
+| Campo | Valor |
+| --- | --- |
+| Project ref | `oegpgcgkdrpwnilhveik` |
+| API URL | `https://oegpgcgkdrpwnilhveik.supabase.co` |
+| Admin | `guilhermegalli7@gmail.com` |
+| Worker | `https://forja.guilherme-galli.workers.dev` |
+
+## Credenciais
+
+- **Nunca** commitar secrets nem pedir ao usuário chaves que já estão nos **GitHub Secrets** ou no Worker Cloudflare.
+- Secrets GitHub confirmados: `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`, `CLOUDFLARE_*`, `AI_PROVIDER`.
+- Para migrations/bootstrap via CI, configurar também: `SUPABASE_SERVICE_ROLE_KEY`, `SUPABASE_DB_URL` (ou `SUPABASE_DB_PASSWORD`).
+
+## Fluxo do agente
+
+1. **Código / schema:** branch `cursor/<descricao>-XXXX` → PR → merge em `main` (regra `publish-github-main.mdc`).
+2. **Nova migration** em `supabase/migrations/`: após merge em `main`, o workflow **Apply Supabase Migrations** aplica SQL via pooler.
+3. **Bootstrap admin / limpar demos:** Actions → **Bootstrap Supabase Admin** (`workflow_dispatch`, `apply_sql=true`).
+4. **Não** usar `npm run dev`, `npm install` local ou `.env.local` — credenciais ficam só no CI/Cloudflare.
+
+## Migrations (ordem)
+
+Ver lista completa na skill `supabase-forja`. Sempre idempotentes (`IF NOT EXISTS`).
+
+## O que NÃO fazer
+
+- Pedir setup local ou `.env.local` ao usuário.
+- Reutilizar credenciais do projeto CCTVC (`tkqydblejqzwihdjuztb`).
+- Aplicar SQL manualmente sem documentar na skill o status do schema.
