@@ -7,6 +7,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
+import type { GenerateWorkoutFormValues } from "@/lib/ai/generate-form";
 
 const GOALS = [
   "Hipertrofia",
@@ -59,17 +60,33 @@ function Chip({
   );
 }
 
-export function GenerateWorkoutForm() {
-  const [goal, setGoal] = useState("Hipertrofia");
-  const [frequency, setFrequency] = useState(4);
-  const [duration, setDuration] = useState(60);
-  const [equipment, setEquipment] = useState<string[]>(["academia_completa"]);
-  const [experience, setExperience] = useState("Intermediário");
-  const [sport, setSport] = useState("Futebol");
-  const [availableDays, setAvailableDays] = useState(["SEG", "TER", "QUI", "SÁB"]);
-  const [preferences, setPreferences] = useState(
-    "Quero melhorar minha explosão para futebol.",
-  );
+const DEFAULT_VALUES: GenerateWorkoutFormValues = {
+  goal: "Hipertrofia",
+  frequency: 4,
+  duration: 60,
+  equipment: ["academia_completa"],
+  experience: "Intermediário",
+  sport: "Futebol",
+  availableDays: ["SEG", "TER", "QUI", "SÁB"],
+  preferences: "Quero melhorar minha explosão para futebol.",
+};
+
+export function GenerateWorkoutForm({
+  initialValues,
+  fromOnboarding = false,
+}: {
+  initialValues?: Partial<GenerateWorkoutFormValues>;
+  fromOnboarding?: boolean;
+}) {
+  const defaults = { ...DEFAULT_VALUES, ...initialValues };
+  const [goal, setGoal] = useState(defaults.goal);
+  const [frequency, setFrequency] = useState(defaults.frequency);
+  const [duration, setDuration] = useState(defaults.duration);
+  const [equipment, setEquipment] = useState<string[]>(defaults.equipment);
+  const [experience, setExperience] = useState(defaults.experience);
+  const [sport, setSport] = useState(defaults.sport);
+  const [availableDays, setAvailableDays] = useState(defaults.availableDays);
+  const [preferences, setPreferences] = useState(defaults.preferences);
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState<unknown>(null);
   const [error, setError] = useState<string | null>(null);
@@ -127,6 +144,12 @@ export function GenerateWorkoutForm() {
         <p className="text-white/60">
           A IA seleciona exercícios da biblioteca e retorna JSON validado.
         </p>
+        {fromOnboarding && (
+          <p className="rounded-xl border border-emerald-400/30 bg-emerald-400/10 p-3 text-sm text-emerald-100">
+            Campos pré-preenchidos com base no seu questionário de onboarding.
+            Ajuste se quiser e gere seu primeiro treino.
+          </p>
+        )}
       </header>
 
       <section className="space-y-3">

@@ -107,6 +107,6 @@ export async function POST(request: Request) {
   return NextResponse.json({
     ok: true,
     profile_completed_at: now,
-    redirect: "/dashboard",
+    redirect: "/ai/generate?from=onboarding",
   });
 }

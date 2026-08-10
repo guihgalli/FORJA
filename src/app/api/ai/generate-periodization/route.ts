@@ -7,6 +7,7 @@ import {
   demoHistory,
   demoProfile,
 } from "@/lib/demo/store";
+import { loadAthleteProfile } from "@/lib/profile/load";
 
 const BodySchema = z.object({
   goal: z.string(),
@@ -19,18 +20,30 @@ const BodySchema = z.object({
   preferences: z.string().optional(),
 });
 
+function filterExercises(equipment: string[]) {
+  return demoExercises.filter((e) => {
+    if (equipment.includes("academia_completa")) return true;
+    return equipment.includes(e.equipment) || e.equipment === "peso_corporal";
+  });
+}
+
 export async function POST(req: Request) {
   try {
     const body = BodySchema.parse(await req.json());
-    const exercises = demoExercises.filter((e) => {
-      if (body.equipment.includes("academia_completa")) return true;
-      return (
-        body.equipment.includes(e.equipment) || e.equipment === "peso_corporal"
-      );
-    });
+
+    const loaded = await loadAthleteProfile();
+    if ("error" in loaded) {
+      return NextResponse.json({ error: loaded.error }, { status: loaded.status });
+    }
+
+    const profile = loaded.profile.profile_completed_at
+      ? loaded.profile
+      : demoProfile;
+
+    const exercises = filterExercises(body.equipment);
 
     const result = await generatePeriodizationWithAI({
-      profile: demoProfile as unknown as Record<string, unknown>,
+      profile: profile as unknown as Record<string, unknown>,
       history: demoHistory,
       exercises,
       calendar: demoCalendar,
