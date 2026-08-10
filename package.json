@@ -13,7 +13,8 @@
     "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts",
     "db:reset": "echo \"Use supabase db reset com as migrations em supabase/migrations\"",
     "seed:exercises": "node -e \"console.log(\"seed em supabase/seed/001_exercises.sql\")\"",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "db:bootstrap-admin": "node scripts/supabase-bootstrap-admin.mjs"
   },
   "dependencies": {
     "@opennextjs/cloudflare": "^1.20.2",

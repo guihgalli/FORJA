@@ -17,9 +17,10 @@
 5. Em Authentication → URL Configuration:
    - Site URL: `https://forja.<seu-subdominio>.workers.dev` (ou domínio custom)
    - Redirect URLs: `/auth/callback`, `/dashboard`, `/login`, `/admin`
-6. Bootstrap do primeiro admin (escolha uma):
-   - Variável `ADMIN_EMAILS=voce@gmail.com` no Worker / `.env.local` + service role, **ou**
-   - SQL: `UPDATE profiles SET role = 'ADMIN' WHERE email = 'voce@gmail.com';`
+6. Bootstrap do admin (`guilhermegalli7@gmail.com`):
+   - Variável `ADMIN_EMAILS=guilhermegalli7@gmail.com` + `SUPABASE_SERVICE_ROLE_KEY`, **ou**
+   - SQL: `UPDATE profiles SET role = 'ADMIN' WHERE email = 'guilhermegalli7@gmail.com';`
+   - Script: `npm run db:bootstrap-admin` (promove admin e remove emails de teste)
 ## 2. Cloudflare Workers (OpenNext)
 
 Pré-requisitos locais:

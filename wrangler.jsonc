@@ -15,6 +15,7 @@
     }
   ],
   "vars": {
-    "AI_PROVIDER": "mock"
+    "AI_PROVIDER": "mock",
+    "ADMIN_EMAILS": "guilhermegalli7@gmail.com"
   }
 }

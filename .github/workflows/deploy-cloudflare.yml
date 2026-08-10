@@ -33,4 +33,5 @@ jobs:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: |
           export AI_PROVIDER="${AI_PROVIDER:-mock}"
+          export ADMIN_EMAILS="${ADMIN_EMAILS:-guilhermegalli7@gmail.com}"
           npm run deploy
