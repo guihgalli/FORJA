@@ -54,3 +54,14 @@ Ou: `npm run db:apply-migrations` / `npm run db:bootstrap-admin`
 
 - Worker: `forja` → `https://forja.guilherme-galli.workers.dev`
 - Workflow: `.github/workflows/deploy-cloudflare.yml` (push em `main`)
+
+
+## Status do schema
+
+Aplicado em 2026-08-10 via pooler session (`aws-1-us-west-2:5432`):
+
+- `init` + seed 119 exercícios + `admin_auth` + bootstrap admin emails
+- `app_settings.admin_emails` = `guilhermegalli7@gmail.com`
+- Auth users começam vazios — no primeiro login desse email, promover com `ADMIN_EMAILS` + `SUPABASE_SECRET_KEY` no Worker, ou SQL `UPDATE profiles SET role = 'ADMIN' WHERE email = ...`
+
+Pooler preferido para DDL: **porta 5432 (session mode)**.
