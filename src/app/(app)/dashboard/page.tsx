@@ -9,8 +9,14 @@ import {
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { demoDashboard, demoTodayWorkout } from "@/lib/demo/store";
+import { getCurrentProfile } from "@/lib/auth/session";
 
-export default function DashboardPage() {
+export default async function DashboardPage() {
+  const profile = await getCurrentProfile();
+  const firstName =
+    profile?.full_name?.trim().split(/\s+/)[0] ||
+    profile?.email?.split("@")[0] ||
+    "atleta";
   const d = demoDashboard;
   const recoveryColor =
     d.recovery.status === "good"
@@ -27,7 +33,7 @@ export default function DashboardPage() {
             FORJA
           </p>
           <h1 className="font-[family-name:var(--font-display)] text-3xl text-white">
-            Olá, Alex
+            Olá, {firstName}
           </h1>
           <p className="text-sm text-white/55">Pronto para o treino de hoje?</p>
         </div>
