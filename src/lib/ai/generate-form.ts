@@ -1,4 +1,9 @@
 import { EXPERIENCE_OPTIONS } from "@/lib/onboarding/schema";
+import {
+  getTrainingSexLabel,
+  resolveTrainingSex,
+  type TrainingSex,
+} from "@/lib/ai/gender-training";
 import type { AthleteProfile } from "@/types";
 
 export type GenerateWorkoutFormValues = {
@@ -77,5 +82,16 @@ export function profileToGenerateForm(
       ? profile.available_days
       : ["SEG", "TER", "QUI", "SÁB"],
     preferences: preferencesParts.join("\n"),
+  };
+}
+
+export function getProfileTrainingSexInfo(profile: AthleteProfile): {
+  trainingSex: TrainingSex | null;
+  trainingSexLabel: string | null;
+} {
+  const trainingSex = resolveTrainingSex(profile.sex);
+  return {
+    trainingSex,
+    trainingSexLabel: trainingSex ? getTrainingSexLabel(trainingSex) : null,
   };
 }

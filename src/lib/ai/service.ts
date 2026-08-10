@@ -15,10 +15,17 @@ import {
   validateWorkoutAgainstRules,
   type RuleViolation,
 } from "@/lib/ai/rules/engine";
+import {
+  buildGenderTrainingPrompt,
+  buildGenderVolumeHint,
+  prioritizeExercisesForSex,
+  type TrainingSex,
+} from "@/lib/ai/gender-training";
 import type { CalendarEventLite, Exercise, TrainingHistoryPoint } from "@/types";
 import { planGenerationLimit } from "@/lib/utils";
 
 export type GenerateWorkoutInput = {
+  trainingSex: TrainingSex;
   profile: Record<string, unknown>;
   history: TrainingHistoryPoint[];
   exercises: Exercise[];
@@ -59,10 +66,18 @@ export async function generateWorkoutWithAI(input: GenerateWorkoutInput) {
   assertUsage(input.plan, input.usage);
 
   const provider = getAIProvider();
-  const allowedIds = new Set(input.exercises.map((e) => e.id));
-  const exercisesById = new Map(input.exercises.map((e) => [e.id, e]));
-
-  const compactExercises = input.exercises.slice(0, 80).map((e) => ({
+  const orderedExercises = prioritizeExercisesForSex(
+    input.exercises,
+    input.trainingSex,
+  );
+  const allowedIds = new Set(orderedExercises.map((e) => e.id));
+  const exercisesById = new Map(orderedExercises.map((e) => [e.id, e]));
+  const genderRules = buildGenderTrainingPrompt(input.trainingSex);
+  const genderVolume = buildGenderVolumeHint(input.trainingSex);
+  const skipGenderVolume =
+    input.form.goal.toLowerCase() === "reabilitação" ||
+    input.form.goal.toLowerCase() === "reabilitacao";
+  const exercisesForPrompt = orderedExercises.slice(0, 80).map((e) => ({
     id: e.id,
     name: e.name,
     primary_muscle: e.primary_muscle,
@@ -87,9 +102,13 @@ export async function generateWorkoutWithAI(input: GenerateWorkoutInput) {
             buildGenerateWorkoutPrompt({
               profile: input.profile,
               history: input.history,
-              exercises: compactExercises,
+              exercises: exercisesForPrompt,
               calendar: input.calendar,
-              form: input.form,
+              form: {
+                ...input.form,
+                training_sex: input.trainingSex,
+              },
+              genderRules,
             }) +
             (lastError
               ? `\nCORREÇÃO OBRIGATÓRIA: ${lastError}. Violações: ${JSON.stringify(violations)}`
@@ -109,6 +128,8 @@ export async function generateWorkoutWithAI(input: GenerateWorkoutInput) {
         exercisesById,
         equipment: input.form.equipment,
         calendar: input.calendar,
+        genderVolume,
+        skipGenderVolume,
       });
 
       const hard = violations.filter((v) => v.severity === "error");
@@ -133,6 +154,7 @@ export async function generateWorkoutWithAI(input: GenerateWorkoutInput) {
           outputTokens: completion.outputTokens,
           latencyMs: completion.latencyMs,
           attempts: attempt,
+          trainingSex: input.trainingSex,
         },
       };
     } catch (err) {
@@ -148,8 +170,17 @@ export async function generateWorkoutWithAI(input: GenerateWorkoutInput) {
 export async function generatePeriodizationWithAI(input: GenerateWorkoutInput) {
   assertUsage(input.plan, input.usage);
   const provider = getAIProvider();
-  const allowedIds = new Set(input.exercises.map((e) => e.id));
-  const exercisesById = new Map(input.exercises.map((e) => [e.id, e]));
+  const orderedExercises = prioritizeExercisesForSex(
+    input.exercises,
+    input.trainingSex,
+  );
+  const allowedIds = new Set(orderedExercises.map((e) => e.id));
+  const exercisesById = new Map(orderedExercises.map((e) => [e.id, e]));
+  const genderRules = buildGenderTrainingPrompt(input.trainingSex);
+  const genderVolume = buildGenderVolumeHint(input.trainingSex);
+  const skipGenderVolume =
+    input.form.goal.toLowerCase() === "reabilitação" ||
+    input.form.goal.toLowerCase() === "reabilitacao";
 
   const completion = await provider.complete({
     messages: [
@@ -159,14 +190,18 @@ export async function generatePeriodizationWithAI(input: GenerateWorkoutInput) {
         content: buildPeriodizationPrompt({
           profile: input.profile,
           history: input.history,
-          exercises: input.exercises.slice(0, 80).map((e) => ({
+          exercises: orderedExercises.slice(0, 80).map((e) => ({
             id: e.id,
             name: e.name,
             primary_muscle: e.primary_muscle,
             equipment: e.equipment,
           })),
           calendar: input.calendar,
-          form: input.form,
+          form: {
+            ...input.form,
+            training_sex: input.trainingSex,
+          },
+          genderRules,
         }),
       },
     ],
@@ -184,6 +219,8 @@ export async function generatePeriodizationWithAI(input: GenerateWorkoutInput) {
         exercisesById,
         equipment: input.form.equipment,
         calendar: input.calendar,
+        genderVolume,
+        skipGenderVolume,
       }).filter((v) => v.severity === "error");
       if (hard.length) {
         throw new Error(
@@ -203,6 +240,7 @@ export async function generatePeriodizationWithAI(input: GenerateWorkoutInput) {
       inputTokens: completion.inputTokens,
       outputTokens: completion.outputTokens,
       latencyMs: completion.latencyMs,
+      trainingSex: input.trainingSex,
     },
   };
 }

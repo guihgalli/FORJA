@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
+import { assertProfileTrainingSex } from "@/lib/ai/assert-training-sex";
 import { generatePeriodizationWithAI } from "@/lib/ai/service";
 import {
   demoCalendar,
@@ -40,9 +41,12 @@ export async function POST(req: Request) {
       ? loaded.profile
       : demoProfile;
 
+    const trainingSex = assertProfileTrainingSex(profile);
+
     const exercises = filterExercises(body.equipment);
 
     const result = await generatePeriodizationWithAI({
+      trainingSex,
       profile: profile as unknown as Record<string, unknown>,
       history: demoHistory,
       exercises,
