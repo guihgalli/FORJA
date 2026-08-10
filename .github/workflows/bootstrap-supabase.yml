@@ -1,0 +1,46 @@
+name: Bootstrap Supabase Admin
+
+on:
+  workflow_dispatch:
+    inputs:
+      apply_sql:
+        description: "Aplicar migrations via SUPABASE_DB_URL (psql)"
+        required: false
+        default: "true"
+        type: choice
+        options:
+          - "true"
+          - "false"
+
+jobs:
+  bootstrap:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install
+        run: npm ci
+
+      - name: Install psql
+        if: ${{ inputs.apply_sql == 'true' }}
+        run: sudo apt-get update && sudo apt-get install -y postgresql-client
+
+      - name: Bootstrap admin + limpar testes
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          SUPABASE_DB_URL: ${{ secrets.SUPABASE_DB_URL }}
+          ADMIN_EMAILS: guilhermegalli7@gmail.com
+        run: |
+          if [ -z "$NEXT_PUBLIC_SUPABASE_URL" ] || [ -z "$SUPABASE_SERVICE_ROLE_KEY" ]; then
+            echo "Faltam secrets NEXT_PUBLIC_SUPABASE_URL e/ou SUPABASE_SERVICE_ROLE_KEY"
+            exit 1
+          fi
+          npm run db:bootstrap-admin
