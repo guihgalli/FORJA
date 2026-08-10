@@ -31,6 +31,9 @@ Migrations:
 
 - `supabase/migrations/20260322000001_init.sql` — schema, RLS, storage, trigger de signup
 - `supabase/migrations/20260322000002_seed_exercises.sql` — 119 exercícios
+- `supabase/migrations/20260322120000_admin_auth.sql` — papéis admin + RLS de gestão
+
+Auth: `/login` (email/senha + Google OAuth) · callback `/auth/callback` · admin `/admin`
 
 Edge Functions: `generate-workout`, `generate-periodization`, `adapt-workout`, `calculate-progress`, `generate-report`, `process-video`, `send-notification`.
 
