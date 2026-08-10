@@ -39,6 +39,13 @@ export type AthleteProfile = {
   session_duration_min?: number | null;
   equipment?: string[];
   notes?: string | null;
+  profile_completed_at?: string | null;
+  dietary_preference?: string | null;
+  food_allergies?: string[];
+  food_restrictions?: string[];
+  meals_per_day?: number | null;
+  activity_level?: string | null;
+  diet_notes?: string | null;
 };
 
 export type WorkoutExercisePrescription = {

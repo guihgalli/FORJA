@@ -47,6 +47,9 @@ Com `PGPASSWORD` / `SUPABASE_DB_PASSWORD`.
 2. `20260322000002_seed_exercises.sql`
 3. `20260322120000_admin_auth.sql`
 4. `20260322130000_bootstrap_admin_galli.sql`
+5. `20260322140000_promote_admin_on_signup.sql`
+6. `20260322150000_exercise_video_urls.sql`
+7. `20260322160000_onboarding_profile.sql`
 
 Ou: `npm run db:apply-migrations` / `npm run db:bootstrap-admin`
 
