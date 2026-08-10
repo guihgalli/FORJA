@@ -16,8 +16,9 @@ export default function RegisterPage() {
   async function onSubmit(e: React.FormEvent) {
     e.preventDefault();
     if (!isSupabaseConfigured()) {
-      setMessage("Modo demo ativo. Conta simulada — indo ao dashboard.");
-      window.location.href = "/dashboard";
+      setMessage(
+        "Cadastro indisponível: configure o Supabase antes de criar contas.",
+      );
       return;
     }
     const supabase = createClient();

@@ -17,7 +17,6 @@ type AdminUser = {
 
 export function UserRoleManager({ currentUserId }: { currentUserId?: string }) {
   const [users, setUsers] = useState<AdminUser[]>([]);
-  const [demo, setDemo] = useState(false);
   const [loading, setLoading] = useState(true);
   const [savingId, setSavingId] = useState<string | null>(null);
   const [message, setMessage] = useState<string | null>(null);
@@ -29,7 +28,6 @@ export function UserRoleManager({ currentUserId }: { currentUserId?: string }) {
         const res = await fetch("/api/admin/users");
         const json = (await res.json()) as {
           users?: AdminUser[];
-          demo?: boolean;
           error?: string;
         };
         if (!res.ok) {
@@ -38,7 +36,6 @@ export function UserRoleManager({ currentUserId }: { currentUserId?: string }) {
         }
         if (!cancelled) {
           setUsers(json.users ?? []);
-          setDemo(Boolean(json.demo));
         }
       } catch {
         if (!cancelled) setMessage("Falha de rede ao carregar usuários");
@@ -60,7 +57,7 @@ export function UserRoleManager({ currentUserId }: { currentUserId?: string }) {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ id, role }),
       });
-      const json = (await res.json()) as { error?: string; demo?: boolean };
+      const json = (await res.json()) as { error?: string };
       if (!res.ok) {
         setMessage(json.error ?? "Não foi possível atualizar o papel");
         return;
@@ -68,11 +65,7 @@ export function UserRoleManager({ currentUserId }: { currentUserId?: string }) {
       setUsers((prev) =>
         prev.map((user) => (user.id === id ? { ...user, role } : user)),
       );
-      setMessage(
-        json.demo
-          ? "Papel atualizado no modo demo (não persiste)."
-          : "Papel atualizado.",
-      );
+      setMessage("Papel atualizado.");
     } catch {
       setMessage("Falha de rede ao atualizar papel");
     } finally {
@@ -86,10 +79,10 @@ export function UserRoleManager({ currentUserId }: { currentUserId?: string }) {
 
   return (
     <div className="space-y-4">
-      {demo && (
-        <p className="rounded-xl border border-amber-400/20 bg-amber-400/10 px-3 py-2 text-sm text-amber-100">
-          Modo demo: alterações não persistem. Configure Supabase +{" "}
-          <code className="text-xs">ADMIN_EMAILS</code> para administração real.
+      {users.length === 0 && !message && (
+        <p className="rounded-xl border border-white/10 bg-white/5 p-3 text-sm text-white/60">
+          Nenhum usuário cadastrado ainda. Contas reais aparecem após o primeiro
+          login (Google ou email/senha).
         </p>
       )}
 

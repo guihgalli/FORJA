@@ -30,7 +30,8 @@ export default async function AdminPage() {
         )}
         {!configured && (
           <p className="text-sm text-amber-100/90">
-            Supabase não configurado — painel em modo demo.
+            Supabase não configurado — administração indisponível até as
+            variáveis de ambiente estarem definidas.
           </p>
         )}
       </header>

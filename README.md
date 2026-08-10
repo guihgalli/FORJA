@@ -17,7 +17,8 @@ cp .env.example .env.local
 npm run dev
 ```
 
-Sem Supabase/LLM configurados, o app sobe em **modo demo** (biblioteca com 119 exercícios + mock AI).
+Sem Supabase configurado, login/cadastro e rotas protegidas ficam bloqueados (sem usuários demo).
+Com LLM ausente, as rotas de IA usam provider `mock` sobre a biblioteca de exercícios.
 
 ## Supabase
 
@@ -32,6 +33,15 @@ Migrations:
 - `supabase/migrations/20260322000001_init.sql` — schema, RLS, storage, trigger de signup
 - `supabase/migrations/20260322000002_seed_exercises.sql` — 119 exercícios
 - `supabase/migrations/20260322120000_admin_auth.sql` — papéis admin + RLS de gestão
+- `supabase/migrations/20260322130000_bootstrap_admin_galli.sql` — admin + limpeza emails teste
+- `supabase/migrations/20260322160000_cleanup_demo_users.sql` — remove usuários demo do Auth
+
+Produção (excluir demos + promover admin):
+
+```bash
+npm run db:bootstrap-admin
+# ou aplique a migration cleanup via npm run db:apply-migrations
+```
 
 Auth: `/login` (email/senha + Google OAuth) · callback `/auth/callback` · admin `/admin`
 
