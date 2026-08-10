@@ -24,7 +24,7 @@ export default function RegisterPage() {
     const { error } = await supabase!.auth.signUp({
       email,
       password,
-      options: { data: { full_name: fullName, role: "STUDENT" } },
+      options: { data: { full_name: fullName } },
     });
     setMessage(error ? error.message : "Conta criada. Verifique seu email.");
   }

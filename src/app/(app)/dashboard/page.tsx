@@ -107,6 +107,8 @@ export default function DashboardPage() {
         </Button>
         <Button asChild variant="outline">
           <Link href="/trainer">Dashboard do Personal</Link>
+          {" · "}
+          <Link href="/admin">Admin</Link>
         </Button>
       </div>
     </div>

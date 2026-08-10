@@ -109,6 +109,9 @@ export default function ProfilePage() {
         <Button asChild variant="outline">
           <Link href="/measurements">Avaliação física</Link>
         </Button>
+        <Button asChild variant="outline">
+          <Link href="/admin">Administração</Link>
+        </Button>
         <Button asChild variant="ghost">
           <Link href="/login">Conta / Auth</Link>
         </Button>

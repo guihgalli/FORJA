@@ -6,14 +6,20 @@
 2. SQL Editor → execute na ordem:
    - `supabase/migrations/20260322000001_init.sql`
    - `supabase/migrations/20260322000002_seed_exercises.sql`
-3. Authentication → Providers: Email (+ Google opcional)
+   - `supabase/migrations/20260322120000_admin_auth.sql`
+3. Authentication → Providers: Email + Google
+   - Google Cloud Console → OAuth Client (Web) → Client ID/Secret no Supabase
+   - Authorized redirect URI do Google: `https://YOUR_PROJECT.supabase.co/auth/v1/callback`
 4. Settings → API: copie
    - `NEXT_PUBLIC_SUPABASE_URL`
    - `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+   - `SUPABASE_SERVICE_ROLE_KEY` (só backend / bootstrap de admin)
 5. Em Authentication → URL Configuration:
    - Site URL: `https://forja.<seu-subdominio>.workers.dev` (ou domínio custom)
-   - Redirect URLs: mesma URL + `/dashboard` e `/login`
-
+   - Redirect URLs: `/auth/callback`, `/dashboard`, `/login`, `/admin`
+6. Bootstrap do primeiro admin (escolha uma):
+   - Variável `ADMIN_EMAILS=voce@gmail.com` no Worker / `.env.local` + service role, **ou**
+   - SQL: `UPDATE profiles SET role = 'ADMIN' WHERE email = 'voce@gmail.com';`
 ## 2. Cloudflare Workers (OpenNext)
 
 Pré-requisitos locais:
@@ -31,6 +37,8 @@ Variáveis de ambiente no Worker (Dashboard → Workers → forja → Settings �
 | --- | --- |
 | `NEXT_PUBLIC_SUPABASE_URL` | plaintext |
 | `NEXT_PUBLIC_SUPABASE_ANON_KEY` | secret |
+| `SUPABASE_SERVICE_ROLE_KEY` | secret (bootstrap admin) |
+| `ADMIN_EMAILS` | plaintext (ex.: `voce@gmail.com`) |
 | `AI_PROVIDER` | plaintext (`mock` / `openai` / ...) |
 | `OPENAI_API_KEY` | secret (opcional) |
 
@@ -62,5 +70,7 @@ Secrets do repositório:
 - `CLOUDFLARE_ACCOUNT_ID`
 - `NEXT_PUBLIC_SUPABASE_URL`
 - `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+- `SUPABASE_SERVICE_ROLE_KEY` (bootstrap admin)
+- `ADMIN_EMAILS` (opcional)
 - `AI_PROVIDER` (opcional)
 - `OPENAI_API_KEY` (opcional)
