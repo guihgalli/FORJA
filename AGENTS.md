@@ -7,3 +7,10 @@ This version has breaking changes — APIs, conventions, and file structure may 
 This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
 
 <!-- END:nextjs-agent-rules -->
+
+# FORJA — Agent notes
+
+- Cursor Rules: `.cursor/rules/forja-secrets.mdc` e `.cursor/rules/forja-stack.mdc`
+- Secrets reais: GitHub Actions Secrets do repo `guihgalli/FORJA` (nunca no git)
+- Deploy público: `https://forja.guilherme-galli.workers.dev`
+- Supabase project ref: `oegpgcgkdrpwnilhveik`
