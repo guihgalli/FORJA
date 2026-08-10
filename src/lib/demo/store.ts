@@ -27,6 +27,13 @@ export const demoProfile: AthleteProfile = {
   session_duration_min: 60,
   equipment: ["academia_completa", "halteres", "barra"],
   notes: "Quero melhorar explosão e evitar fadiga antes dos jogos.",
+  profile_completed_at: "2026-03-22T12:00:00.000Z",
+  dietary_preference: "omnivoro",
+  food_allergies: [],
+  food_restrictions: [],
+  meals_per_day: 4,
+  activity_level: "intenso",
+  diet_notes: "Priorizar proteína e carboidratos antes dos jogos.",
 };
 
 export const demoHistory: TrainingHistoryPoint[] = [

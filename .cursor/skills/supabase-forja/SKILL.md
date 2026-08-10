@@ -50,6 +50,7 @@ Com `PGPASSWORD` / `SUPABASE_DB_PASSWORD`.
 5. `20260322140000_promote_admin_on_signup.sql`
 6. `20260322150000_exercise_video_urls.sql`
 7. `20260322160000_cleanup_demo_users.sql` — remove Auth users demo/teste
+8. `20260322170000_onboarding_profile.sql` — onboarding treino/dieta + `profile_completed_at`
 
 Ou: `npm run db:apply-migrations` / `npm run db:bootstrap-admin`
 
