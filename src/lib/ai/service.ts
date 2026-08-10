@@ -15,6 +15,7 @@ import {
   validateWorkoutAgainstRules,
   type RuleViolation,
 } from "@/lib/ai/rules/engine";
+import { extractSexFromProfile } from "@/lib/ai/sex";
 import type { CalendarEventLite, Exercise, TrainingHistoryPoint } from "@/types";
 import { planGenerationLimit } from "@/lib/utils";
 
@@ -109,6 +110,9 @@ export async function generateWorkoutWithAI(input: GenerateWorkoutInput) {
         exercisesById,
         equipment: input.form.equipment,
         calendar: input.calendar,
+        sex: extractSexFromProfile(input.profile),
+        goal: input.form.goal,
+        profile: input.profile,
       });
 
       const hard = violations.filter((v) => v.severity === "error");
@@ -184,6 +188,9 @@ export async function generatePeriodizationWithAI(input: GenerateWorkoutInput) {
         exercisesById,
         equipment: input.form.equipment,
         calendar: input.calendar,
+        sex: extractSexFromProfile(input.profile),
+        goal: input.form.goal,
+        profile: input.profile,
       }).filter((v) => v.severity === "error");
       if (hard.length) {
         throw new Error(

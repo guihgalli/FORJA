@@ -6,7 +6,15 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
+import { ATHLETE_SEX_VALUES } from "@/lib/ai/sex";
 import { demoProfile } from "@/lib/demo/store";
+
+const SEX_LABELS: Record<(typeof ATHLETE_SEX_VALUES)[number], string> = {
+  masculino: "Masculino",
+  feminino: "Feminino",
+  outro: "Outro",
+  prefiro_nao_dizer: "Prefiro não dizer",
+};
 
 export default function ProfilePage() {
   const [profile, setProfile] = useState(demoProfile);
@@ -33,7 +41,6 @@ export default function ProfilePage() {
           [
             ["Nome", "full_name"],
             ["Idade", "age"],
-            ["Sexo", "sex"],
             ["Altura (cm)", "height_cm"],
             ["Peso (kg)", "weight_kg"],
             ["% Gordura", "body_fat_pct"],
@@ -56,6 +63,26 @@ export default function ProfilePage() {
             />
           </div>
         ))}
+
+        <div className="space-y-1.5">
+          <Label>Sexo</Label>
+          <select
+            className="flex h-11 w-full rounded-xl border border-white/10 bg-white/5 px-3 text-sm text-white outline-none focus:border-emerald-400/40"
+            value={profile.sex ?? "prefiro_nao_dizer"}
+            onChange={(e) =>
+              setProfile((p) => ({ ...p, sex: e.target.value }))
+            }
+          >
+            {ATHLETE_SEX_VALUES.map((value) => (
+              <option key={value} value={value} className="bg-zinc-900">
+                {SEX_LABELS[value]}
+              </option>
+            ))}
+          </select>
+          <p className="text-xs text-white/45">
+            Usado pela IA para adaptar volume e distribuição muscular do treino.
+          </p>
+        </div>
 
         <div className="space-y-1.5">
           <Label>Dias disponíveis</Label>
