@@ -13,7 +13,7 @@ if [[ -z "${SUPABASE_DB_URL:-}" ]]; then
     exit 1
   fi
   REF="${SUPABASE_PROJECT_REF:-oegpgcgkdrpwnilhveik}"
-  export SUPABASE_DB_URL="postgresql://postgres.${REF}:${SUPABASE_DB_PASSWORD}@aws-1-us-west-2.pooler.supabase.com:6543/postgres?sslmode=require"
+  export SUPABASE_DB_URL="postgresql://postgres.${REF}:${SUPABASE_DB_PASSWORD}@aws-1-us-west-2.pooler.supabase.com:5432/postgres?sslmode=require"
 fi
 
 for f in $(ls "$ROOT/supabase/migrations"/*.sql | sort); do

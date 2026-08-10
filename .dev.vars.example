@@ -1,7 +1,8 @@
-NEXTJS_ENV=development
-NEXT_PUBLIC_SUPABASE_URL=
+# Cloudflare Worker (wrangler) — valores reais no Dashboard / GitHub Secrets
+NEXTJS_ENV=production
+NEXT_PUBLIC_SUPABASE_URL=https://oegpgcgkdrpwnilhveik.supabase.co
 NEXT_PUBLIC_SUPABASE_ANON_KEY=
 SUPABASE_SERVICE_ROLE_KEY=
-ADMIN_EMAILS=
+ADMIN_EMAILS=guilhermegalli7@gmail.com
 AI_PROVIDER=mock
 OPENAI_API_KEY=

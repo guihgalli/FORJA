@@ -5,6 +5,14 @@ description: Opera o Supabase do FORJA (auth Google/email, profiles, admin, migr
 
 # Supabase — FORJA
 
+## Cursor Cloud (produção only)
+
+- **Sem ambiente local:** não usar `npm run dev`, `npm install` nem `.env.local` no agente.
+- **Produção:** merge em `main` → `.github/workflows/deploy-cloudflare.yml` publica o Worker.
+- **Migrations:** merge em `main` com arquivos em `supabase/migrations/` → workflow **Apply Supabase Migrations**.
+- **Bootstrap admin:** Actions → **Bootstrap Supabase Admin** (`workflow_dispatch`).
+- Regra complementar: `.cursor/rules/supabase-producao.mdc`
+
 ## Projeto
 
 | Campo | Valor |
@@ -19,24 +27,25 @@ description: Opera o Supabase do FORJA (auth Google/email, profiles, admin, migr
 
 ## Credenciais (nunca commitar)
 
-Já configuradas nos **GitHub Secrets** do repo `guihgalli/FORJA` (e no Worker Cloudflare). Não peça de novo ao usuário salvo se uma operação falhar por auth.
+Credenciais nos **GitHub Secrets** (`guihgalli/FORJA`) e no Worker Cloudflare. Não peça de novo ao usuário salvo se uma operação falhar por auth.
 
-| Variável | Uso |
-| --- | --- |
-| `NEXT_PUBLIC_SUPABASE_URL` | App / Workers — `https://oegpgcgkdrpwnilhveik.supabase.co` |
-| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | anon JWT ou publishable |
-| `SUPABASE_SECRET_KEY` / `SUPABASE_SERVICE_ROLE_KEY` | `sb_secret_...` (Auth Admin, bypass RLS) |
-| `SUPABASE_DB_PASSWORD` | Senha Postgres (migrations via psql) |
-| `SUPABASE_DB_URL` | URI completa (alternativa) |
-| `ADMIN_EMAILS` | `guilhermegalli7@gmail.com` |
-| `CLOUDFLARE_API_TOKEN` | Deploy Workers |
-| `CLOUDFLARE_ACCOUNT_ID` | Deploy Workers |
+| Variável | Uso | GitHub Secret |
+| --- | --- | --- |
+| `NEXT_PUBLIC_SUPABASE_URL` | App / Workers — `https://oegpgcgkdrpwnilhveik.supabase.co` | ✅ |
+| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | anon JWT ou publishable | ✅ |
+| `SUPABASE_SECRET_KEY` / `SUPABASE_SERVICE_ROLE_KEY` | `sb_secret_...` (Auth Admin, bypass RLS) | ⚠️ configurar |
+| `SUPABASE_DB_PASSWORD` | Senha Postgres (migrations via psql) | ⚠️ configurar |
+| `SUPABASE_DB_URL` | URI completa pooler (alternativa) | ⚠️ configurar |
+| `ADMIN_EMAILS` | `guilhermegalli7@gmail.com` | opcional (default no workflow) |
+| `CLOUDFLARE_API_TOKEN` | Deploy Workers | ✅ |
+| `CLOUDFLARE_ACCOUNT_ID` | Deploy Workers | ✅ |
+| `AI_PROVIDER` | LLM (`mock` default) | ✅ |
 
-**Como operar limpeza/bootstrap em produção:**
+**Como operar em produção (Cursor Cloud):**
 
-1. Preferido: Actions → **Bootstrap Supabase Admin** (`workflow_dispatch`, `apply_sql=true`) — usa os secrets do GitHub.
-2. Local/agente com `.env.local` (gitignored): `npm run db:bootstrap-admin`
-3. SQL Editor / `psql` pooler session `5432` com a migration `20260322160000_cleanup_demo_users.sql`
+1. **Nova migration:** merge em `main` → workflow **Apply Supabase Migrations** (automático).
+2. **Bootstrap admin / limpar demos:** Actions → **Bootstrap Supabase Admin** (`workflow_dispatch`, `apply_sql=true`).
+3. Fallback: SQL Editor / `psql` pooler session **5432** (ver seção psql abaixo).
 
 **Nota:** o projeto CCTVC (`tkqydblejqzwihdjuztb`) é **outro** Supabase (Netlify). Não reutilizar a anon/secret do CCTVC no FORJA.
 
@@ -81,8 +90,8 @@ Emails removidos: `admin@forja.app`, `personal@forja.app`, `aluno@forja.app`, `d
 
 Aplicado em 2026-08-10 via pooler session (`aws-1-us-west-2:5432`):
 
-- `init` + seed 119 exercícios + `admin_auth` + bootstrap admin emails + promote on signup + video URLs + **cleanup demo users**
+- `init` + seed 119 exercícios + `admin_auth` + bootstrap admin emails + promote on signup + video URLs + **cleanup demo users** + **onboarding_profile**
 - `app_settings.admin_emails` = `guilhermegalli7@gmail.com`
 - Auth em produção: **somente** `guilhermegalli7@gmail.com` com `profiles.role = ADMIN` (sem usuários demo)
 
-Pooler preferido para DDL: **porta 5432 (session mode)**.
+Pooler preferido para DDL: **porta 5432 (session mode)**. Transaction pooler **6543** também funciona via `scripts/apply-migrations.sh`.
