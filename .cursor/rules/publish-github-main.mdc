@@ -1,0 +1,59 @@
+---
+description: Publicar no GitHub na branch main após alterações (dispara deploy Cloudflare)
+alwaysApply: true
+---
+
+# Publicação obrigatória — FORJA (GitHub `main`)
+
+Após **qualquer alteração** concluída neste repositório (código, prompts de IA, schema, config, docs de deploy), o agente **deve** publicar na branch **`main`** do GitHub antes de encerrar a tarefa. Não espere o usuário pedir push/merge.
+
+A publicação em `main` é o caminho oficial de produção: o workflow `.github/workflows/deploy-cloudflare.yml` faz deploy no Cloudflare Workers ao receber push em `main`.
+
+## Fluxo obrigatório (fim de cada tarefa com mudanças)
+
+1. Trabalhar em branch de feature `cursor/<descricao>-XXXX` (nunca commit direto sem revisão quando houver risco).
+2. Garantir typecheck/lint relevantes (`npm run typecheck` quando houver mudanças em TypeScript).
+3. Commitar com mensagem clara.
+4. `git push -u origin <branch-feature>`.
+5. **Publicar em `main`** (escolher uma):
+   - Preferido: abrir/atualizar PR para `main` e fazer merge (`gh pr create` + `gh pr merge --merge`), **ou**
+   - Se o usuário pedir publicação direta e a tarefa estiver estável: merge local em `main` + `git push origin main`.
+6. Confirmar que o push em `main` foi aceito.
+7. Informar o usuário com: branch publicada, URL do PR (se houver) e que o deploy Cloudflare deve rodar via Actions.
+
+## Comandos de referência
+
+```bash
+# Feature → remote
+git push -u origin HEAD
+
+# PR para main + merge
+gh pr create --base main --head "$(git branch --show-current)" --title "..." --body "..."
+gh pr merge --merge
+
+# Ou merge local (somente se pedido / tarefa estável)
+git checkout main
+git pull origin main
+git merge --no-ff <branch-feature>
+git push origin main
+```
+
+## Deploy Cloudflare
+
+- Trigger: push em **`main`** (e `workflow_dispatch`).
+- Secrets no repositório GitHub: `CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID`, `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`, opcionais `AI_PROVIDER` / `OPENAI_API_KEY`.
+- URL de produção típica: `https://forja.guilherme-galli.workers.dev`
+- Deploy local de emergência (não substitui publicar em `main`): `npm run deploy` com credenciais Cloudflare no ambiente.
+
+## Regras de segurança
+
+- Nunca commitar tokens, `.env`, PATs ou secrets.
+- Não deixar o token no `remote` URL após o push (usar `GH_TOKEN` / `x-access-token` só na sessão e restaurar `https://github.com/guihgalli/FORJA.git`).
+- Se o push falhar por auth, pedir `GITHUB_TOKEN` / PAT com `contents:write` e `workflows` se necessário; não declarar a tarefa concluída sem publicação ou sem explicar o bloqueio.
+- Retry até 2 vezes em erro de rede no push.
+
+## O que NÃO fazer
+
+- Encerrar com mudanças só na branch de feature sem caminho para `main`.
+- Publicar só em branches `cursor/*` como se fossem produção.
+- Disparar deploy Cloudflare a partir de branches de experimento (o workflow deve ficar restrito a `main`).

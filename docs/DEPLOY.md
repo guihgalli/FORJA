@@ -49,9 +49,12 @@ URL padrão após o primeiro deploy: `https://forja.<account>.workers.dev`
 Cloudflare → Workers → forja → Settings → Domains & Routes  
 Ex.: `app.seudominio.com` com SSL Full/Strict.
 
-## 4. GitHub Actions
+## 4. GitHub Actions (produção = `main`)
 
 Workflow: `.github/workflows/deploy-cloudflare.yml`
+
+- Dispara automaticamente em **push na branch `main`** (e via `workflow_dispatch`).
+- Regra do agente Cursor: `.cursor/rules/publish-github-main.mdc` — ao concluir mudanças, publicar em `main`.
 
 Secrets do repositório:
 
@@ -59,4 +62,5 @@ Secrets do repositório:
 - `CLOUDFLARE_ACCOUNT_ID`
 - `NEXT_PUBLIC_SUPABASE_URL`
 - `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+- `AI_PROVIDER` (opcional)
 - `OPENAI_API_KEY` (opcional)

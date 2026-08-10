@@ -2,7 +2,7 @@ name: Deploy Cloudflare
 
 on:
   push:
-    branches: [main, cursor/forja-plataforma-7566]
+    branches: [main]
   workflow_dispatch:
 
 jobs:
