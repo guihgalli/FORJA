@@ -1,0 +1,24 @@
+---
+description: Stack e convenções da plataforma FORJA (Next.js + Supabase + Cloudflare + IA)
+alwaysApply: true
+---
+
+# FORJA — Stack
+
+- Frontend: Next.js (App Router) + TypeScript + Tailwind + UI estilo shadcn
+- Backend: Supabase (Auth, Postgres, RLS, Storage, Edge Functions)
+- Edge: Cloudflare Workers via `@opennextjs/cloudflare`
+- IA: camada `src/lib/ai/providers` — chaves só no backend; LLM não inventa `exercise_id`
+
+## Regras de produto
+
+- Responder UI/docs em português quando o usuário falar português.
+- Mobile-first (bottom nav): Início, Treino, Evolução, Calendário, Perfil.
+- Multi-tenant com RLS; nunca confiar só no frontend.
+- Validar JSON da IA com Zod + motor de regras antes de salvar.
+
+## Deploy
+
+- Branch de trabalho: `cursor/forja-plataforma-7566` (ou `main` após merge)
+- Deploy Cloudflare: `npm run deploy`
+- Migrations: `supabase/migrations/*.sql`
