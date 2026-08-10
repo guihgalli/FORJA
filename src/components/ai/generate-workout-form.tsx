@@ -19,6 +19,12 @@ const GOALS = [
   "Performance esportiva",
   "Reabilitação",
 ];
+const SEX_OPTIONS = [
+  { value: "feminino", label: "Feminino" },
+  { value: "masculino", label: "Masculino" },
+  { value: "outro", label: "Outro" },
+  { value: "prefiro_nao_dizer", label: "Prefiro não dizer" },
+] as const;
 const FREQ = [1, 2, 3, 4, 5, 6];
 const DURATIONS = [30, 45, 60, 90];
 const EQUIPMENT = [
@@ -61,6 +67,8 @@ function Chip({
 
 export function GenerateWorkoutForm() {
   const [goal, setGoal] = useState("Hipertrofia");
+  const [sex, setSex] =
+    useState<(typeof SEX_OPTIONS)[number]["value"]>("masculino");
   const [frequency, setFrequency] = useState(4);
   const [duration, setDuration] = useState(60);
   const [equipment, setEquipment] = useState<string[]>(["academia_completa"]);
@@ -95,6 +103,7 @@ export function GenerateWorkoutForm() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           goal,
+          sex,
           frequency,
           duration,
           equipment,
@@ -125,9 +134,29 @@ export function GenerateWorkoutForm() {
           ✨ Gerar treino com IA
         </h1>
         <p className="text-white/60">
-          A IA seleciona exercícios da biblioteca e retorna JSON validado.
+          A IA adapta volume e distribuição muscular ao sexo do atleta e retorna
+          JSON validado da biblioteca.
         </p>
       </header>
+
+      <section className="space-y-3">
+        <Label>Sexo</Label>
+        <div className="flex flex-wrap gap-2">
+          {SEX_OPTIONS.map((option) => (
+            <Chip
+              key={option.value}
+              active={sex === option.value}
+              onClick={() => setSex(option.value)}
+            >
+              {option.label}
+            </Chip>
+          ))}
+        </div>
+        <p className="text-xs text-white/45">
+          Feminino prioriza glúteos/posteriores; masculino equilibra compostos
+          push/pull. Outro ou não informar: programação individualizada.
+        </p>
+      </section>
 
       <section className="space-y-3">
         <Label>Objetivo</Label>

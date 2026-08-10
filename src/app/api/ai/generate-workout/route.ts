@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
 import { generateWorkoutWithAI } from "@/lib/ai/service";
+import { ATHLETE_SEX_VALUES, normalizeAthleteSex } from "@/lib/ai/sex";
 import {
   demoCalendar,
   demoExercises,
@@ -17,6 +18,7 @@ const BodySchema = z.object({
   sport: z.string(),
   availableDays: z.array(z.string()),
   preferences: z.string().optional(),
+  sex: z.enum(ATHLETE_SEX_VALUES).optional(),
 });
 
 export async function POST(req: Request) {
@@ -29,8 +31,16 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: "Unauthorized" }, { status: 429 });
     }
 
+    const sex =
+      normalizeAthleteSex(body.sex) ??
+      normalizeAthleteSex(demoProfile.sex) ??
+      "masculino";
+
     const result = await generateWorkoutWithAI({
-      profile: demoProfile as unknown as Record<string, unknown>,
+      profile: {
+        ...(demoProfile as unknown as Record<string, unknown>),
+        sex,
+      },
       history: demoHistory,
       exercises: demoExercises.filter((e) => {
         if (body.equipment.includes("academia_completa")) return true;
