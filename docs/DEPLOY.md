@@ -2,14 +2,15 @@
 
 ## 1. Supabase
 
-1. Crie o projeto em https://supabase.com/dashboard
+1. Projeto FORJA: `oegpgcgkdrpwnilhveik` — https://supabase.com/dashboard/project/oegpgcgkdrpwnilhveik
 2. SQL Editor → execute na ordem:
    - `supabase/migrations/20260322000001_init.sql`
    - `supabase/migrations/20260322000002_seed_exercises.sql`
    - `supabase/migrations/20260322120000_admin_auth.sql`
 3. Authentication → Providers: Email + Google
+   - Ative **Google** (hoje o projeto está só com Email)
    - Google Cloud Console → OAuth Client (Web) → Client ID/Secret no Supabase
-   - Authorized redirect URI do Google: `https://YOUR_PROJECT.supabase.co/auth/v1/callback`
+   - Authorized redirect URI do Google: `https://oegpgcgkdrpwnilhveik.supabase.co/auth/v1/callback`
 4. Settings → API: copie
    - `NEXT_PUBLIC_SUPABASE_URL`
    - `NEXT_PUBLIC_SUPABASE_ANON_KEY`

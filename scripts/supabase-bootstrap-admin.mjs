@@ -2,13 +2,34 @@
 /**
  * Promove guilhermegalli7@gmail.com a ADMIN e remove usuários de teste.
  * Requer: NEXT_PUBLIC_SUPABASE_URL + SUPABASE_SERVICE_ROLE_KEY
- *
  * Opcional: SUPABASE_DB_URL para aplicar migrations SQL via psql.
  */
 import { createClient } from "@supabase/supabase-js";
-import { readFileSync, readdirSync } from "node:fs";
+import { existsSync, readFileSync, readdirSync } from "node:fs";
 import { join } from "node:path";
 import { spawnSync } from "node:child_process";
+
+function loadEnvFile(path) {
+  if (!existsSync(path)) return;
+  for (const line of readFileSync(path, "utf8").split("\n")) {
+    const trimmed = line.trim();
+    if (!trimmed || trimmed.startsWith("#")) continue;
+    const i = trimmed.indexOf("=");
+    if (i === -1) continue;
+    const key = trimmed.slice(0, i).trim();
+    let val = trimmed.slice(i + 1).trim();
+    if (
+      (val.startsWith('"') && val.endsWith('"')) ||
+      (val.startsWith("'") && val.endsWith("'"))
+    ) {
+      val = val.slice(1, -1);
+    }
+    if (!(key in process.env)) process.env[key] = val;
+  }
+}
+
+loadEnvFile(".env.local");
+loadEnvFile(".env");
 
 const ADMIN_EMAIL = "guilhermegalli7@gmail.com";
 const TEST_EMAILS = new Set([
@@ -27,6 +48,9 @@ const dbUrl = process.env.SUPABASE_DB_URL;
 if (!url || !serviceKey) {
   console.error(
     "Faltam NEXT_PUBLIC_SUPABASE_URL e/ou SUPABASE_SERVICE_ROLE_KEY",
+  );
+  console.error(
+    "No Dashboard: Settings → API → service_role (secret). A anon/publishable não basta.",
   );
   process.exit(1);
 }
@@ -50,22 +74,19 @@ function applyMigrationsWithPsql() {
     const path = join(dir, file);
     console.log(`Aplicando ${file}...`);
     const sql = readFileSync(path, "utf8");
-    const result = spawnSync("psql", [dbUrl, "-v", "ON_ERROR_STOP=1", "-c", sql], {
-      encoding: "utf8",
-    });
+    const result = spawnSync(
+      "psql",
+      [dbUrl, "-v", "ON_ERROR_STOP=1", "-c", sql],
+      { encoding: "utf8", maxBuffer: 20 * 1024 * 1024 },
+    );
     if (result.status !== 0) {
-      // Migrations já aplicadas podem falhar em CREATE TYPE etc. — reporta e segue nas novas
-      console.warn(`Aviso em ${file}:`, result.stderr || result.stdout);
-      if (file.includes("admin_auth") || file.includes("bootstrap_admin")) {
-        // critical for this task
-        if (
-          !String(result.stderr || "").includes("already exists") &&
-          result.status !== 0
-        ) {
-          // retry individual statements is hard; fail only if clearly new migration failed hard
-          console.error(result.stderr);
-        }
+      const err = `${result.stderr || ""}\n${result.stdout || ""}`;
+      if (/already exists/i.test(err)) {
+        console.warn(`  (já existia) ${file}`);
+        continue;
       }
+      console.error(err);
+      process.exit(1);
     } else {
       console.log(`OK ${file}`);
     }
@@ -120,11 +141,8 @@ async function main() {
         .from("profiles")
         .update({ role: "ADMIN" })
         .eq("id", user.id);
-      if (error) {
-        console.error(`  falha profile: ${error.message}`);
-      } else {
-        console.log("  profiles.role = ADMIN");
-      }
+      if (error) console.error(`  falha profile: ${error.message}`);
+      else console.log("  profiles.role = ADMIN");
 
       await admin.from("app_settings").upsert({
         key: "admin_emails",
@@ -133,7 +151,6 @@ async function main() {
     }
   }
 
-  // Se o admin ainda não existe no Auth, só deixa o setting pronto
   await admin.from("app_settings").upsert({
     key: "admin_emails",
     value: ADMIN_EMAIL,
